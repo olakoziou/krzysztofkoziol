@@ -1,0 +1,156 @@
+import React from 'react';
+import styled from 'styled-components';
+import Container from './Container';
+import { Link } from 'react-router-dom';
+import { colors } from '../styles';
+
+const Head = styled.header`
+  height: 100px;
+  position: relative;
+  overflow-x: hidden;
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+`;
+
+const Logo = styled.div`
+  z-index: 100;
+  width: 40px;
+  line-height: 0.7;
+  a {
+    color: ${colors().orange};
+    font-weight: 700;
+    font-size: 18px;
+  }
+`;
+const Menu = styled.div`
+  display: none;
+  flex-grow: 1;
+  nav {
+    ul {
+      display: flex;
+    }
+  }
+`;
+
+const MobileMenuBox = styled.div`
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+`;
+const MobileMenu = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transform: translateX(100%);
+  background-color: ${colors().navy2};
+
+  nav {
+    /* height: 100%;
+    width: 100%; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    ul {
+      li {
+        a {
+          display: inline-block;
+          width: 100%;
+          padding: 15px;
+          text-align: center;
+          font-size: 32px;
+          color: ${colors().orange};
+        }
+      }
+    }
+  }
+`;
+
+const Hamburger = styled.div`
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  div {
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background-color: ${colors().orange};
+    border-radius: 20px;
+  }
+`;
+
+function Header() {
+  return (
+    <Head>
+      <Container>
+        <Logo>
+          <a href="/">krzysztof koziol</a>
+        </Logo>
+        {/* <Menu>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/nieruchomosci">nieruchomości</Link>
+              </li>
+              <li>
+                <Link to="/konsultacje">konsultacje</Link>
+              </li>
+              <li>
+                <Link to="/szkolenia">szkolenia</Link>
+              </li>
+              <li>
+                <a href="tel:+48-730-173-031">kontakt</a>
+              </li>
+            </ul>
+          </nav>
+        </Menu> */}
+        <MobileMenuBox>
+          <Hamburger>
+            <div></div>
+            <div></div>
+            <div></div>
+          </Hamburger>
+          <MobileMenu>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/nieruchomosci">nieruchomości</Link>
+                </li>
+                <li>
+                  <Link to="/konsultacje">konsultacje</Link>
+                </li>
+                <li>
+                  <Link to="/szkolenia">szkolenia</Link>
+                </li>
+                <li>
+                  <a href="tel:+48-730-173-031">kontakt</a>
+                </li>
+              </ul>
+            </nav>
+          </MobileMenu>
+        </MobileMenuBox>
+      </Container>
+    </Head>
+  );
+}
+
+export default Header;
