@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
 import img from '../assets/img.svg';
 import { colors } from '../styles';
 import Container from './Container';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 const Box = styled.div`
   height: calc(100vh - 100px);
@@ -26,10 +28,14 @@ function Hero() {
   return (
     <Container>
       <Box>
-        <Title>
-          Czy zarabiać na nieruchomościach może <span>każdy</span> ?
-        </Title>
-        <img src={img} alt="hero image" />
+        <Fade right>
+          <Title>
+            Czy zarabiać na nieruchomościach może <span>każdy</span> ?
+          </Title>
+        </Fade>
+        <Fade left>
+          <img src={img} alt="hero image" />
+        </Fade>
       </Box>
     </Container>
   );

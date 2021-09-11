@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import styled from 'styled-components';
+import Zoom from 'react-reveal/Zoom';
+
 import { colors } from '../../styles';
 import Container from '../Container';
 import AboutDetails from './AboutDetails';
@@ -37,7 +39,7 @@ const Button = styled.div`
   height: 50px;
   background-color: ${colors().grey};
   box-shadow: ${(props) =>
-    props.isOpened
+    !props.isOpened
       ? `0 0 30px -1px ${colors().orange}`
       : `0 0 30px -1px ${colors().violet}`};
   z-index: 10;
@@ -46,16 +48,18 @@ const Button = styled.div`
 
 function About() {
   const [state, setState] = useState({ isOpened: false });
+  const [scrollY, setScrollY] = useState(null);
 
   const handleClick = (e) => {
     setState((prev) => {
       return { isOpened: !prev.isOpened };
     });
   };
+
   return (
     <Box>
       <Container>
-        <AboutIntro />
+        {!state.isOpened ? <AboutIntro /> : null}
         <AboutDetails isOpened={state.isOpened} />
       </Container>
       <Button isOpened={state.isOpened} onClick={handleClick}></Button>

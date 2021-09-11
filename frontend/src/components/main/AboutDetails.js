@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from '../../styles';
 import Title from '../Title';
+import InfoBoxWithMenu from './InfoBoxWithMenu';
+import { Bounce } from 'react-reveal';
 
 const Box = styled.div`
-  height: ${(props) => (props.isOpened === true ? '0' : '500px')};
-  overflow-y: ${(props) => (props.isOpened ? 'hidden' : 'scroll')};
+  height: ${(props) => (!props.isOpened === true ? '0' : '500px')};
+  overflow-y: ${(props) => (!props.isOpened ? 'hidden' : 'scroll')};
   /* overflow-x: hidden; */
-  transition: all 0.5s 0.2s;
+  transition: all 0.5s 0.1s;
 
   /* > div {
     overflow-x: scroll;
@@ -16,7 +18,7 @@ const Box = styled.div`
 
 const Paragraph = styled.p`
   /* margin-top: -40px; */
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   color: ${colors().navy1};
   padding-bottom: 30px;
@@ -64,40 +66,39 @@ function AboutDetails({ isOpened }) {
 
   return (
     <Box isOpened={isOpened} className="about">
-      <div>
-        <Title text="o mnie" size={68} color={colors(0.2).navy3} weight={700} />
-        <Paragraph>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          ipsum, quam exercitationem aliquam consectetur sint placeat, nihil aut
-          quas earum, quae officiis! Velit voluptates vel nesciunt eos a, eum
-          animi explicabo maxime fuga unde, consectetur facere et voluptate
-          officia, nisi praesentium tenetur fugiat. Perferendis pariatur nemo ex
-          mollitia iste modi!
-        </Paragraph>
-      </div>
-      <div>
-        <Title
-          text="projekty"
-          size={68}
-          color={colors(0.2).navy3}
-          weight={700}
-        />
-        <ProjectNameBox>
-          <ul>
-            {state.map((el) => (
-              <ProjectName
-                data-id={el.id}
-                onClick={handleClick}
-                key={`id-${el.id}`}
-                isActive={active === el.id ? true : false}
-              >
-                {el.name}
-              </ProjectName>
-            ))}
-          </ul>
-        </ProjectNameBox>
-        <Paragraph>{text}</Paragraph>
-      </div>
+      <Bounce right>
+        <div>
+          <Title
+            text="o mnie"
+            size={68}
+            color={colors(0.2).navy3}
+            weight={700}
+          />
+          <Paragraph>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+            ipsum, quam exercitationem aliquam consectetur sint placeat, nihil
+            aut quas earum, quae officiis! Velit voluptates vel nesciunt eos a,
+            eum animi explicabo maxime fuga unde, consectetur facere et
+            voluptate officia, nisi praesentium tenetur fugiat. Perferendis
+            pariatur nemo ex mollitia iste modi!
+          </Paragraph>
+        </div>
+
+        <div>
+          <Title
+            text="projekty"
+            size={68}
+            color={colors(0.2).navy3}
+            weight={700}
+          />
+          <InfoBoxWithMenu
+            data={state}
+            handleClick={handleClick}
+            text={text}
+            active={active}
+          />
+        </div>
+      </Bounce>
     </Box>
   );
 }

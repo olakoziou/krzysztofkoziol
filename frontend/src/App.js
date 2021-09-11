@@ -6,11 +6,13 @@ import Header from './components/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import Main from './components/main/Main';
+import Footer from './components/Footer';
+import Consulting from './components/consulting/Consulting';
+import Training from './components/training/Training';
 
 function App() {
   const color = colors();
 
-  console.log(color);
   return (
     <div className="App">
       <GlobalStyles />
@@ -19,8 +21,17 @@ function App() {
           <Header />
           <Hero />
           <Switch>
-            <Main />
+            <Route exact path="/">
+              <Main />
+            </Route>
+            <Route path="/konsultacje">
+              <Consulting />
+            </Route>
+            <Route path="/szkolenia">
+              <Training />
+            </Route>
           </Switch>
+          <Footer />
         </Router>
       </Background>
     </div>

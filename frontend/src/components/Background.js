@@ -5,7 +5,6 @@ import { colors } from '../styles';
 const Box = styled.div`
   background: ${(props) =>
     `linear-gradient(160deg, ${props.navy1} 0%, ${props.navy2} 33%, ${props.navy3} 100%)`};
-  min-height: 100vh;
   overflow: hidden;
 `;
 
