@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from './Container';
 import { Link } from 'react-router-dom';
-import { colors } from '../styles';
+import { breakpoints, colors } from '../styles';
 
 const Head = styled.header`
   height: 100px;
@@ -15,6 +15,14 @@ const Head = styled.header`
     justify-content: space-between;
     height: 100%;
   }
+
+  @media ${breakpoints('sm')} {
+    height: 130px;
+  }
+
+  @media ${breakpoints('md')} {
+    height: 150px;
+  }
 `;
 
 const Logo = styled.div`
@@ -24,7 +32,19 @@ const Logo = styled.div`
   a {
     color: ${colors().orange};
     font-weight: 700;
-    font-size: 18px;
+    font-size: 22px;
+
+    @media ${breakpoints('sm')} {
+      font-size: 24px;
+    }
+
+    @media ${breakpoints('md')} {
+      font-size: 28px;
+    }
+
+    @media ${breakpoints('lg')} {
+      font-size: 32px;
+    }
   }
 `;
 const Menu = styled.div`

@@ -1,15 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import Title from '../Title';
-import { colors } from '../../styles';
+import { breakpoints, colors } from '../../styles';
 import { Zoom } from 'react-reveal';
 
 const Box = styled.div`
   > span {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
     font-size: 20px;
     color: ${colors().navy1};
-    display: inline-block;
     padding: 10px 0;
+
+    @media ${breakpoints('xsm')} {
+      width: 90%;
+    }
+
+    @media ${breakpoints('sm')} {
+      width: 80%;
+    }
+
+    @media ${breakpoints('md')} {
+      width: 70%;
+    }
   }
 `;
 

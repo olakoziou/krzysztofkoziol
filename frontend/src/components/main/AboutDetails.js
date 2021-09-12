@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors } from '../../styles';
+import { breakpoints, colors } from '../../styles';
 import Title from '../Title';
 import InfoBoxWithMenu from './InfoBoxWithMenu';
 import { Bounce } from 'react-reveal';
@@ -9,6 +9,16 @@ const Box = styled.div`
   height: ${(props) => (!props.isOpened === true ? '0' : '500px')};
   overflow-y: ${(props) => (!props.isOpened ? 'hidden' : 'scroll')};
   transition: all 0.5s 0.1s;
+  width: 100%;
+  margin: 0 auto;
+
+  @media ${breakpoints('sm')} {
+    width: 90%;
+  }
+
+  @media ${breakpoints('sm')} {
+    width: 85%;
+  }
 `;
 
 const Paragraph = styled.p`

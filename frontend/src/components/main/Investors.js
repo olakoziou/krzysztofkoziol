@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors } from '../../styles';
+import { breakpoints, colors } from '../../styles';
 import Container from '../Container';
 import Title from '../Title';
 import { Zoom } from 'react-reveal';
@@ -16,6 +16,15 @@ const Box = styled.div`
 
 const InvestorsBox = styled.div`
   padding: 40px 0;
+
+  @media ${breakpoints('md')} {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      width: 50%;
+    }
+  }
 `;
 
 const InvestorItem = styled.div`
@@ -29,14 +38,22 @@ const InvestorItem = styled.div`
   font-size: 18px;
   /* border-radius: 0px 10px 10px 10px; */
 
+  @media ${breakpoints('sm')} {
+    width: 65%;
+  }
+
+  @media ${breakpoints('md')} {
+    width: 80%;
+  }
+
   &.topLeft {
     border-radius: 0 20px 20px 20px;
     left: -8px;
     padding: 15px 15px 15px 30px;
 
     &::before {
-      top: -15%;
-      left: -12%;
+      top: -50px;
+      left: -40px;
     }
   }
 
@@ -47,8 +64,8 @@ const InvestorItem = styled.div`
     padding: 15px 30px 15px 15px;
 
     &::before {
-      top: -15%;
-      right: -12%;
+      top: -50px;
+      right: -40px;
     }
   }
 
@@ -58,8 +75,8 @@ const InvestorItem = styled.div`
     padding: 15px 15px 15px 30px;
 
     &::before {
-      bottom: -15%;
-      left: -12%;
+      bottom: -50px;
+      left: -40px;
     }
   }
 
@@ -70,8 +87,8 @@ const InvestorItem = styled.div`
     padding: 15px 30px 15px 15px;
 
     &::before {
-      bottom: -15%;
-      right: -12%;
+      bottom: -50px;
+      right: -40px;
     }
   }
 

@@ -1,12 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../styles';
+import { breakpoints, colors } from '../styles';
 
 const Text = styled.div`
   font-size: ${(props) => `${props.size}px`};
   font-weight: ${(props) => props.weight};
   color: ${(props) => props.color};
   position: relative;
+
+  width: 100%;
+  margin: 0 auto;
+
+  @media ${breakpoints('xsm')} {
+    width: 90%;
+  }
+
+  @media ${breakpoints('sm')} {
+    width: 80%;
+  }
+
+  @media ${breakpoints('md')} {
+    width: 70%;
+  }
 
   &::after {
     content: ${(props) => props.after && "''"};
@@ -16,6 +31,15 @@ const Text = styled.div`
     right: -2%;
     height: 3px;
     background-color: ${colors().orange};
+
+    @media ${breakpoints('xsm')} {
+      left: 0;
+      right: 0;
+    }
+
+    @media ${breakpoints('sm')} {
+      bottom: -20%;
+    }
   }
 `;
 
