@@ -25,19 +25,18 @@ function Coworking() {
       id: 1,
       name: 'inwestycje',
       text: 'inwestycje ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porttitor erat sit amet orci egestas convallis. Donec hendrerit, massa ut lacinia aliquet, purus lorem tempor magna, maximus varius leo quam a dolor. Suspendisse bibendum tortor in nisi imperdiet maximus.',
-      
     },
     {
       id: 2,
       name: 'szkolenia',
       text: 'szkolenia ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porttitor erat sit amet orci egestas convallis. Donec hendrerit, massa ut lacinia aliquet, purus lorem tempor magna, maximus varius leo quam a dolor. Suspendisse bibendum tortor in nisi imperdiet maximus.',
-      url: '/szkolenia'
+      url: '/szkolenia',
     },
     {
       id: 3,
       name: 'konsultacje',
       text: 'konsultacje ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porttitor erat sit amet orci egestas convallis. Donec hendrerit, massa ut lacinia aliquet, purus lorem tempor magna, maximus varius leo quam a dolor. Suspendisse bibendum tortor in nisi imperdiet maximus.',
-      url: '/konsultacje'
+      url: '/konsultacje',
     },
     {
       id: 4,
@@ -58,7 +57,7 @@ function Coworking() {
         <Zoom>
           <Title
             size={44}
-            color={colors(0.5).navy3}
+            color={colors().navy3}
             text="WSPÓŁPRACA"
             weight={700}
           />
@@ -69,7 +68,7 @@ function Coworking() {
             handleClick={handleClick}
             text={text}
             active={active}
-            bgc={colors(0.5).navy3}
+            bgc={colors(0.25).grey}
           />
         </Zoom>
       </Container>

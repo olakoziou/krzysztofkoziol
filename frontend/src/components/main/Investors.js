@@ -23,7 +23,7 @@ const InvestorItem = styled.div`
   margin: 25px auto;
   line-height: 1.3;
   color: ${colors().darkGrey};
-  background-color: ${colors(0.01).grey};
+  background-color: ${colors(0.1).grey};
   box-shadow: 0 0 12px -2px ${colors().navy2};
   position: relative;
   font-size: 18px;
@@ -82,7 +82,7 @@ const InvestorItem = styled.div`
     font-family: 'Ubuntu', sans-serif;
     font-size: 112px;
     font-weight: 700;
-    color: ${colors(0.15).violet};
+    color: ${colors(0.4).violet};
   }
 
   h4 {
