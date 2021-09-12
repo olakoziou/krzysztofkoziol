@@ -9,7 +9,7 @@ const P = styled.p`
   color: ${colors().navy1};
   background-color: ${(props) => (props.bgc ? props.bgc : 'transparent')};
   border-radius: 12px;
-  margin: 20px 0 0 0;
+  margin: 10px 0 0 0;
   padding: 20px;
   /* margin-top: 20px; */
 `;
