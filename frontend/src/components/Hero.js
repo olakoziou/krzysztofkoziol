@@ -4,7 +4,6 @@ import Fade from 'react-reveal/Fade';
 import img from '../assets/img.svg';
 import { colors } from '../styles';
 import Container from './Container';
-import { CSSTransitionGroup } from 'react-transition-group';
 
 const Box = styled.div`
   height: calc(100vh - 100px);
@@ -15,7 +14,7 @@ const Box = styled.div`
   }
 `;
 const Title = styled.h2`
-  font-size: 42px;
+  font-size: 40px;
   color: ${colors().grey};
   margin-bottom: 30px;
   span {
@@ -34,7 +33,7 @@ function Hero() {
           </Title>
         </Fade>
         <Fade left>
-          <img src={img} alt="hero image" />
+          <img src={img} alt="hero" />
         </Fade>
       </Box>
     </Container>

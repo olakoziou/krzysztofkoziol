@@ -1,4 +1,3 @@
-import { colors } from './styles';
 import GlobalStyles from './globalStyles';
 import Background from './components/Background';
 import Header from './components/Header';
@@ -11,8 +10,6 @@ import Consulting from './components/consulting/Consulting';
 import Training from './components/training/Training';
 
 function App() {
-  const color = colors();
-
   return (
     <div className="App">
       <GlobalStyles />

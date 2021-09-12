@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import Zoom from 'react-reveal/Zoom';
 
 import { colors } from '../../styles';
 import Container from '../Container';
@@ -48,7 +47,6 @@ const Button = styled.div`
 
 function About() {
   const [state, setState] = useState({ isOpened: false });
-  const [scrollY, setScrollY] = useState(null);
 
   const handleClick = (e) => {
     setState((prev) => {
