@@ -7,7 +7,7 @@ import { breakpoints, colors } from '../styles';
 const Head = styled.header`
   height: 100px;
   position: relative;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 
   > div {
     display: flex;
@@ -50,9 +50,33 @@ const Logo = styled.div`
 const Menu = styled.div`
   display: none;
   flex-grow: 1;
+
+  @media ${breakpoints('md')} {
+    display: block;
+  }
   nav {
     ul {
       display: flex;
+      justify-content: flex-end;
+
+      li {
+        margin: 0 6px;
+        a {
+          font-size: 20px;
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          color: ${colors(0.75).grey};
+          padding: 5px 10px;
+        }
+        &:nth-of-type(4) {
+          a {
+            border-radius: 2px;
+            background-color: ${colors().orange};
+            color: ${colors().navy2};
+          }
+        }
+      }
     }
   }
 `;
@@ -61,6 +85,10 @@ const MobileMenuBox = styled.div`
   /* position: relative; */
   width: 100%;
   height: 100%;
+
+  @media ${breakpoints('md')} {
+    display: none;
+  }
 `;
 const MobileMenu = styled.div`
   position: absolute;
@@ -72,6 +100,10 @@ const MobileMenu = styled.div`
   width: 100vw;
   transform: translateX(100%);
   background-color: ${colors().navy2};
+
+  @media ${breakpoints('md')} {
+    display: none;
+  }
 
   nav {
     /* height: 100%;
@@ -116,6 +148,10 @@ const Hamburger = styled.div`
     background-color: ${colors().orange};
     border-radius: 20px;
   }
+
+  @media ${breakpoints('md')} {
+    display: none;
+  }
 `;
 
 function Header() {
@@ -125,7 +161,7 @@ function Header() {
         <Logo>
           <a href="/">krzysztof koziol</a>
         </Logo>
-        {/* <Menu>
+        <Menu>
           <nav>
             <ul>
               <li>
@@ -142,7 +178,7 @@ function Header() {
               </li>
             </ul>
           </nav>
-        </Menu> */}
+        </Menu>
         <MobileMenuBox>
           <Hamburger>
             <div></div>

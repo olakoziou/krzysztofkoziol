@@ -4,40 +4,33 @@ import Title from '../Title';
 import { breakpoints, colors } from '../../styles';
 import { Zoom } from 'react-reveal';
 
-const Box = styled.div`
-  > span {
-    display: block;
-    width: 100%;
-    margin: 0 auto;
-    font-size: 20px;
-    color: ${colors().navy1};
-    padding: 10px 0;
+const Box = styled.div``;
 
-    @media ${breakpoints('xsm')} {
-      width: 90%;
-    }
+const IntroSpan = styled.span`
+  font-size: 32px;
+  font-weight: 700;
+  color: ${colors().navy2};
+  display: inline-block;
+`;
 
-    @media ${breakpoints('sm')} {
-      width: 80%;
-    }
-
-    @media ${breakpoints('md')} {
-      width: 70%;
-    }
-  }
+const SubSpan = styled.span`
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 20px;
+  color: ${colors().navy1};
+  padding: 10px 0;
 `;
 
 function AboutIntro() {
   return (
     <Box>
       <Zoom>
-        <Title
-          text="Cześć, jestem Krzysiek. Pokażę Ci w jaki sposób można zarabiać na rynku nieruchomości."
-          color={colors().navy2}
-          size={32}
-          weight={700}
-        />
-        <span>Jeśli chcesz mnie lepiej poznać, rozwiń sekcję.</span>
+        <IntroSpan>
+          Cześć, jestem Krzysiek. Pokażę Ci w jaki sposób można zarabiać na
+          rynku nieruchomości.
+        </IntroSpan>
+        <SubSpan>Jeśli chcesz mnie lepiej poznać, rozwiń sekcję.</SubSpan>
       </Zoom>
     </Box>
   );

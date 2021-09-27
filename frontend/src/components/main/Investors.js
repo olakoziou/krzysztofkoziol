@@ -30,12 +30,12 @@ const InvestorsBox = styled.div`
 const InvestorItem = styled.div`
   width: 85%;
   margin: 25px auto;
+  font-size: 20px;
   line-height: 1.3;
   color: ${colors().darkGrey};
   background-color: ${colors(0.1).grey};
   box-shadow: 0 0 12px -2px ${colors().navy2};
   position: relative;
-  font-size: 18px;
   /* border-radius: 0px 10px 10px 10px; */
 
   @media ${breakpoints('sm')} {

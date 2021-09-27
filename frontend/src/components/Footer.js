@@ -74,7 +74,7 @@ function Footer() {
             quaerat?
           </Par>
           <Phone>
-            <i class="fas fa-phone-alt"></i>
+            <i className="fas fa-phone-alt"></i>
             <a href="tel:+48-730-173-031">730 173 031</a>
           </Phone>
           <Copyright>

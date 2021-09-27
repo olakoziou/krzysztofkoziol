@@ -10,8 +10,9 @@ const Text = styled.div`
 
   width: 100%;
   margin: 0 auto;
+  padding: 0 15px;
 
-  @media ${breakpoints('xsm')} {
+  /* @media ${breakpoints('xsm')} {
     width: 90%;
   }
 
@@ -19,8 +20,11 @@ const Text = styled.div`
     width: 80%;
   }
 
-  @media ${breakpoints('md')} {
-    width: 70%;
+  
+  } */
+
+  @media ${breakpoints('sm')} {
+    width: max-content;
   }
 
   &::after {
@@ -29,7 +33,7 @@ const Text = styled.div`
     bottom: -10%;
     left: -2%;
     right: -2%;
-    height: 3px;
+    height: 5px;
     background-color: ${colors().orange};
 
     @media ${breakpoints('xsm')} {

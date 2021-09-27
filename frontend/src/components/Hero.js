@@ -14,6 +14,7 @@ const Box = styled.div`
     /* min-height: calc(100vh - 100px); */
     padding: 60px 0;
     display: flex;
+    align-items: center;
   }
 
   @media ${breakpoints('md')} {
@@ -32,6 +33,10 @@ const Title = styled.h2`
 
   @media ${breakpoints('sm')} {
     font-size: 46px;
+  }
+
+  @media ${breakpoints('md')} {
+    font-size: 56px;
   }
 
   span {
