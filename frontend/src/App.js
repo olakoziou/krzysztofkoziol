@@ -8,6 +8,7 @@ import Main from './components/main/Main';
 import Footer from './components/Footer';
 import Consulting from './components/consulting/Consulting';
 import Training from './components/training/Training';
+import Testimonials from './components/testimonials/Testimonials';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Training />
             </Route>
           </Switch>
+          <Testimonials />
           <Footer />
         </Router>
       </Background>
