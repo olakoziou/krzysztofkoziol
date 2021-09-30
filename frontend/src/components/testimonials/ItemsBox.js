@@ -11,7 +11,7 @@ const ItemsBoxContainer = styled.div`
   overflow-x: hidden;
 
   width: 100%;
-  max-width: 400px;
+  max-width: 250px;
   margin: 0 auto;
   transition: all 1s;
 
@@ -34,7 +34,7 @@ const ItemsBoxContainer = styled.div`
 
 const OverFlow = styled.div`
   width: 100%;
-  /* height: 300px; */
+  height: 300px;
   display: flex;
   transition: all 1s;
 `;

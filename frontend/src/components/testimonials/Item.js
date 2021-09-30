@@ -35,6 +35,7 @@ const ItemBox = styled.div`
   transition: all 1s;
   /* position: absolute; */
   width: 25%;
+  box-shadow: 0 0 20px -5px ${colors().navy1};
 
   @media ${breakpoints('sm')} {
     min-width: calc(50% - 20px);

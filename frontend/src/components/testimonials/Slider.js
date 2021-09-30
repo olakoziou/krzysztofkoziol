@@ -94,36 +94,8 @@ function Slider() {
     },
   ];
   const [state, setState] = useState(data);
-  let [load, setLoad] = useState(false);
 
-  const handleLeftClick = (arr) => {
-    let last = state.slice(-1);
-    let rest = state.slice(0, -1);
-    let images = [...last, ...rest];
-
-    setState(images);
-  };
-  const changeSlide = (arr) => {
-    console.log('right');
-    let [first, ...rest] = state;
-    let images = [...rest, first];
-    setState(images);
-    // const first = arr.shift();
-    // setState([...arr, first]);
-  };
-
-  // const cloneLastToFirst = () => {
-  //   const first = Object.assign({}, state[state.length - 1]);
-  //   setState((prev) => [first, ...prev]);
-  // };
-
-  useEffect(() => {
-    console.log(data);
-    const interval = setInterval(() => {
-      changeSlide();
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [state]);
+  useEffect(() => {});
 
   return (
     <SliderBox>
