@@ -51,7 +51,7 @@ function BackBtn() {
 
   return (
     <Btn onClick={scrollToTop} showButton={showButton}>
-      <i class="fa fa-chevron-up"></i>
+      <i className="fa fa-chevron-up"></i>
     </Btn>
   );
 }

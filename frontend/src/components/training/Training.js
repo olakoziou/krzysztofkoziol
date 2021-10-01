@@ -3,6 +3,7 @@ import { Zoom } from 'react-reveal';
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
 import Container from '../Container';
+import Testimonials from '../testimonials/Testimonials';
 import Title from '../Title';
 
 const Box = styled.div`
@@ -99,6 +100,7 @@ function Training() {
             </Description>
           </MainBox>
         </Zoom>
+        <Testimonials />
       </Container>
     </Box>
   );

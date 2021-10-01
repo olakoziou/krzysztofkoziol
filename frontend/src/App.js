@@ -10,6 +10,7 @@ import Consulting from './components/consulting/Consulting';
 import Training from './components/training/Training';
 import Testimonials from './components/testimonials/Testimonials';
 import Privacy from './components/privacy/Privacy';
+import NoMatch404 from './components/NoMatch404';
 
 function App() {
   return (
@@ -32,8 +33,11 @@ function App() {
             <Route path="/polityka-prywatnosci">
               <Privacy />
             </Route>
+            <Route path="*">
+              <NoMatch404 />
+            </Route>
           </Switch>
-          <Testimonials />
+
           <Footer />
         </Router>
       </Background>

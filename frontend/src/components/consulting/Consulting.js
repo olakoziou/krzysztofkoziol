@@ -4,6 +4,7 @@ import { breakpoints, colors } from '../../styles';
 import { Zoom } from 'react-reveal';
 import Container from '../Container';
 import Title from '../Title';
+import Testimonials from '../testimonials/Testimonials';
 
 const Box = styled.div`
   min-height: 300px;
@@ -50,6 +51,7 @@ function Consulting() {
             <Form></Form>
           </MainBox>
         </Zoom>
+        <Testimonials />
       </Container>
     </Box>
   );
