@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { colors } from '../../styles';
+import { breakpoints, colors } from '../../styles';
 
 const Btn = styled.div`
   width: 70px;
@@ -17,9 +17,19 @@ const Btn = styled.div`
   justify-content: center;
   align-items: center;
   transform: ${(props) => (props.showButton ? `scale(1)` : 'scale(0)')};
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   z-index: 1000;
   cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 30px -4px ${colors().navy1};
+    transform: scale(1.06);
+  }
+
+  @media ${breakpoints('lg')} {
+    bottom: 30px;
+    right: 80px;
+  }
 `;
 
 function BackBtn() {
