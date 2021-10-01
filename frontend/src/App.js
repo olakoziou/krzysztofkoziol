@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Consulting from './components/consulting/Consulting';
 import Training from './components/training/Training';
 import Testimonials from './components/testimonials/Testimonials';
+import Privacy from './components/privacy/Privacy';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/szkolenia">
               <Training />
+            </Route>
+            <Route path="/polityka-prywatnosci">
+              <Privacy />
             </Route>
           </Switch>
           <Testimonials />

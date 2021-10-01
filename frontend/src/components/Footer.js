@@ -26,6 +26,7 @@ const Phone = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
   i {
     color: ${colors().orange};
     margin: 0 8px;
@@ -40,7 +41,7 @@ const Phone = styled.div`
 `;
 
 const Copyright = styled.div`
-  margin: 20px 0 -20px;
+  margin: 0 -20px;
 
   span {
     display: inline-block;
@@ -48,6 +49,15 @@ const Copyright = styled.div`
     text-align: center;
     font-size: 12px;
     color: ${colors().navy1};
+  }
+`;
+
+const Privacy = styled.div`
+  span {
+    a {
+      color: ${colors().navy1};
+      cursor: pointer;
+    }
   }
 `;
 
@@ -77,6 +87,11 @@ function Footer() {
             <i className="fas fa-phone-alt"></i>
             <a href="tel:+48-730-173-031">730 173 031</a>
           </Phone>
+          <Privacy>
+            <span>
+              <a href="/polityka-prywatnosci">Polityka prywatności</a>
+            </span>
+          </Privacy>
           <Copyright>
             <span>Created by Aleksandra Kozioł &copy; {year}</span>
           </Copyright>
