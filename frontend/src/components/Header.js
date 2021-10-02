@@ -165,7 +165,7 @@ function Header() {
           <nav>
             <ul>
               <li>
-                <Link to="/nieruchomosci">nieruchomości</Link>
+                <Link to="/wideo">wideo</Link>
               </li>
               <li>
                 <Link to="/konsultacje">konsultacje</Link>

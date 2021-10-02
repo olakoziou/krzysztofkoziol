@@ -11,6 +11,7 @@ import Training from './components/training/Training';
 import Testimonials from './components/testimonials/Testimonials';
 import Privacy from './components/privacy/Privacy';
 import NoMatch404 from './components/NoMatch404';
+import Video from './components/video/Video';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Main />
+            </Route>
+            <Route path="/wideo">
+              <Video />
             </Route>
             <Route path="/konsultacje">
               <Consulting />

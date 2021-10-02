@@ -8,7 +8,8 @@ const Text = styled.div`
   color: ${(props) => props.color};
   position: relative;
 
-  width: 100%;
+  width: max-content;
+  /* width: 100%; */
   margin: 0 auto;
   padding: 0 15px;
 
@@ -24,7 +25,6 @@ const Text = styled.div`
   } */
 
   @media ${breakpoints('sm')} {
-    width: max-content;
   }
 
   &::after {
