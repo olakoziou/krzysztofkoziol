@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const gallerySchema = new mongoose.Schema(
   {
-    data: [String],
-    test: String,
+    imgs: [Object],
+    display: Boolean,
   },
   { collection: 'gallery' }
 );

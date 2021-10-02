@@ -153,6 +153,8 @@ function Training() {
     fetchData();
   }, []);
 
+  console.log(gallery);
+
   return (
     <Box>
       <Container>

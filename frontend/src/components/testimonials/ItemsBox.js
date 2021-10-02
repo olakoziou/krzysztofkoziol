@@ -42,8 +42,6 @@ const OverFlow = styled.div`
 function ItemsBox({ data }) {
   const [state, setState] = useState(data);
 
-  console.log(data);
-
   return (
     <ItemsBoxContainer>
       <OverFlow className="overflow">
