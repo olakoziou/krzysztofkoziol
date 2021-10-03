@@ -216,8 +216,8 @@ function Header() {
             <nav>
               <ul>
                 <li>
-                  <Link onClick={handleOpenMenu} to="/nieruchomosci">
-                    nieruchomości
+                  <Link onClick={handleOpenMenu} to="/wideo">
+                    wideo
                   </Link>
                 </li>
                 <li>

@@ -4,15 +4,15 @@ import { breakpoints, colors } from '../../styles';
 import VideoIntro from './VideoIntro';
 
 const Box = styled.div`
-  height: ${(props) => (props.height ? '300px' : '80px')};
-  overflow-y: ${(props) => (props.height ? 'scroll' : 'hidden')};
+  height: ${(props) => (props.state ? '300px' : '80px')};
+  overflow-y: ${(props) => (props.state ? 'scroll' : 'hidden')};
   border-bottom: 1px solid ${colors().darkGrey};
   transition: all 0.3s ease-out;
   background-color: ${(props) =>
-    props.height ? `${colors(0.025).navy1}` : `${colors(0.15).grey}`};
+    props.state ? `${colors(0.025).navy1}` : `${colors(0.15).grey}`};
 
   @media ${breakpoints('md')} {
-    height: ${(props) => (props.height ? '400px' : '80px')};
+    height: ${(props) => (props.state ? '400px' : '80px')};
   }
 `;
 const Heading = styled.div`
@@ -50,25 +50,21 @@ const Main = styled.div`
   }
 `;
 
-function VideoItem() {
+function VideoItem({ data }) {
   const [isOpened, setOpened] = useState(false);
 
   return (
-    <Box height={isOpened}>
+    <Box state={isOpened}>
       <Heading onClick={() => setOpened((prev) => !prev)}>
-        <h3>Tytuł tej sekcji</h3>
+        <h3>{data.title}</h3>
         <i className="fa fa-chevron-down"></i>
       </Heading>
       <Main>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi
-          veniam tempora animi hic velit iusto obcaecati exercitationem
-          accusamus quisquam.
-        </p>
+        <p>{data.description}</p>
         <iframe
           width="350"
           height="220"
-          src="https://www.youtube.com/embed/PUGW7ehLrww"
+          src={`${data.url}`}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

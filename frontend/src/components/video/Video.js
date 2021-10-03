@@ -1,4 +1,5 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Zoom } from 'react-reveal';
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
@@ -26,6 +27,18 @@ const MainBox = styled.div`
 `;
 
 function Video() {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios('/api/videos');
+      setVideos(response.data.data.videos);
+    }
+    fetchData();
+  }, []);
+
+  console.log(videos);
+
   return (
     <Box>
       <Container>
@@ -34,9 +47,7 @@ function Video() {
         </Zoom>
         <MainBox>
           <VideoIntro />
-          <VideoItem />
-          <VideoItem />
-          <VideoItem />
+          {videos && videos.map((el) => <VideoItem key={el._id} data={el} />)}
         </MainBox>
       </Container>
       <Testimonials />
