@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Container from './Container';
 import { Link } from 'react-router-dom';
@@ -98,8 +98,11 @@ const MobileMenu = styled.div`
   left: 0;
   height: 100vh;
   width: 100vw;
-  transform: translateX(100%);
+  transform: ${(props) =>
+    props.isOpened ? 'translateX(0)' : 'translateX(100%)'};
   background-color: ${colors().navy2};
+  z-index: 100;
+  transition: all 0.5s;
 
   @media ${breakpoints('md')} {
     display: none;
@@ -136,7 +139,7 @@ const Hamburger = styled.div`
   top: 50%;
   transform: translateY(-50%);
   right: 5%;
-  z-index: 100;
+  z-index: 1000;
 
   display: flex;
   flex-direction: column;
@@ -147,6 +150,26 @@ const Hamburger = styled.div`
     height: 3px;
     background-color: ${colors().orange};
     border-radius: 20px;
+    transition: all 0.5s;
+  }
+
+  div:nth-child(1) {
+    transform: ${(props) =>
+      props.isOpened
+        ? 'rotate(135deg) translate(11px, -9px)'
+        : 'rotate(0) translate(0, 0)'};
+  }
+
+  div:nth-child(2) {
+    transform: ${(props) =>
+      props.isOpened ? 'translateX(300%)' : 'translateX(0)'};
+  }
+
+  div:nth-child(3) {
+    transform: ${(props) =>
+      props.isOpened
+        ? 'rotate(-135deg) translate(10px, 8px)'
+        : 'rotate(0) translate(0, 0)'};
   }
 
   @media ${breakpoints('md')} {
@@ -155,6 +178,10 @@ const Hamburger = styled.div`
 `;
 
 function Header() {
+  const [isOpened, setOpened] = useState(false);
+  const handleOpenMenu = (e) => {
+    setOpened((prev) => !prev);
+  };
   return (
     <Head>
       <Container>
@@ -180,25 +207,33 @@ function Header() {
           </nav>
         </Menu>
         <MobileMenuBox>
-          <Hamburger>
+          <Hamburger isOpened={isOpened} onClick={handleOpenMenu}>
             <div></div>
             <div></div>
             <div></div>
           </Hamburger>
-          <MobileMenu>
+          <MobileMenu isOpened={isOpened}>
             <nav>
               <ul>
                 <li>
-                  <Link to="/nieruchomosci">nieruchomości</Link>
+                  <Link onClick={handleOpenMenu} to="/nieruchomosci">
+                    nieruchomości
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/konsultacje">konsultacje</Link>
+                  <Link onClick={handleOpenMenu} to="/konsultacje">
+                    konsultacje
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/szkolenia">szkolenia</Link>
+                  <Link onClick={handleOpenMenu} to="/szkolenia">
+                    szkolenia
+                  </Link>
                 </li>
                 <li>
-                  <a href="tel:+48-730-173-031">kontakt</a>
+                  <a onClick={handleOpenMenu} href="tel:+48-730-173-031">
+                    kontakt
+                  </a>
                 </li>
               </ul>
             </nav>

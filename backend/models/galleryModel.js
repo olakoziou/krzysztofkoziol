@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 
 const gallerySchema = new mongoose.Schema(
   {
-    imgs: [Object],
+    date: String,
     display: Boolean,
+    imgs: [String],
   },
   { collection: 'gallery' }
 );

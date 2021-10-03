@@ -147,13 +147,15 @@ function Training() {
       const imgs = await axios('/api/gallery');
 
       setTraining(trainings.data.data.training[0]);
-      setGallery(imgs.data.data.gallery[0].imgs);
+      setGallery(imgs.data.data.gallery);
       setDisplay(imgs.data.data.gallery[0].display);
     }
     fetchData();
   }, []);
 
   console.log(gallery);
+  console.log(training);
+  console.log(display);
 
   return (
     <Box>
@@ -197,6 +199,7 @@ function Training() {
               <Button>Kup szkolenie</Button>
             </Description>
           </Zoom>
+          {gallery && gallery.map((el) => console.log(el.imgs))}
           {display ? (
             <Gallery>
               <Zoom>
@@ -204,7 +207,7 @@ function Training() {
               </Zoom>
               {gallery &&
                 gallery.map((el, i) => (
-                  <Zoom key={el.date}>
+                  <Zoom key={el._id}>
                     <GalleryItemBox key={i}>
                       <Title size={18} text={el.date} />
 
