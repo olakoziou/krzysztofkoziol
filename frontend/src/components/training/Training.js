@@ -23,7 +23,7 @@ const Table = styled.div`
   width: 90%;
   margin: 0 auto;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     width: 80%;
   }
 `;
@@ -32,7 +32,7 @@ const Item = styled.div`
   font-size: 24px;
   padding: 10px;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     width: 50%;
   }
 
@@ -50,7 +50,7 @@ const Description = styled.div`
   width: 80%;
   margin: 0 auto;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     padding: 60px 0;
   }
 `;
@@ -103,7 +103,7 @@ const GalleryItems = styled.div`
   flex-wrap: wrap;
   padding: 10px 0;
 
-  @media ${breakpoints('sm')} {
+  @media ${breakpoints().sm} {
     justify-content: center;
   }
 `;
@@ -123,13 +123,13 @@ const GalleryItem = styled.div`
     box-shadow: 0 0 15px -6px ${colors().navy1};
   }
 
-  @media ${breakpoints('sm')} {
+  @media ${breakpoints().sm} {
     width: calc(33.3333% - 15px);
     height: 150px;
     margin: 15px 15px 0 0;
   }
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     width: calc(25% - 15px);
     height: 150px;
     margin: 15px 15px 0 0;

@@ -8,19 +8,19 @@ const Box = styled.div`
   height: 100%;
   margin: 0 auto;
 
-  @media ${breakpoints('xsm')} {
+  @media ${breakpoints().xsm} {
     width: 87%;
   }
 
-  @media ${breakpoints('sm')} {
+  @media ${breakpoints().sm} {
     width: 84%;
   }
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     width: 80%;
   }
 
-  @media ${breakpoints('lg')} {
+  @media ${breakpoints().lg} {
     width: 75%;
   }
 `;

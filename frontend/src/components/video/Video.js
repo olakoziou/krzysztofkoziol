@@ -21,7 +21,7 @@ const MainBox = styled.div`
 
   width: 100%;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     padding: 50px 0;
   }
 `;

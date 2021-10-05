@@ -7,7 +7,7 @@ const Box = styled.div`
   flex-direction: column;
   padding-bottom: 20px;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     flex-direction: row;
   }
 `;
@@ -15,7 +15,7 @@ const Content = styled.div`
   padding: 20px 0;
   width: 100%;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     width: 45%;
     margin: 0 auto;
   }
@@ -25,7 +25,7 @@ const Content = styled.div`
 
     width: 100%;
 
-    @media ${breakpoints('md')} {
+    @media ${breakpoints().md} {
       font-size: 32px;
     }
   }
@@ -34,7 +34,7 @@ const Content = styled.div`
     font-size: 22px;
     line-height: 1.4;
 
-    @media ${breakpoints('md')} {
+    @media ${breakpoints().md} {
       font-size: 24px;
       line-height: 1.6;
     }
@@ -44,7 +44,7 @@ const Video = styled.div`
   padding: 20px 0;
   width: 100%;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     width: 45%;
     margin: 0 auto;
   }

@@ -13,18 +13,18 @@ const Text = styled.div`
   margin: 0 auto;
   padding: 0 15px;
 
-  /* @media ${breakpoints('xsm')} {
+  /* @media ${breakpoints().xsm} {
     width: 90%;
   }
 
-  @media ${breakpoints('sm')} {
+  @media ${breakpoints().sm} {
     width: 80%;
   }
 
   
   } */
 
-  @media ${breakpoints('sm')} {
+  @media ${breakpoints().sm} {
   }
 
   &::after {
@@ -36,12 +36,12 @@ const Text = styled.div`
     height: 5px;
     background-color: ${colors().orange};
 
-    @media ${breakpoints('xsm')} {
+    @media ${breakpoints().xsm} {
       left: 0;
       right: 0;
     }
 
-    @media ${breakpoints('sm')} {
+    @media ${breakpoints().sm} {
       bottom: -20%;
     }
   }

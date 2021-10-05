@@ -18,7 +18,7 @@ const Calendar = styled.div`
   iframe {
     height: 1200px;
 
-    @media ${breakpoints('md')} {
+    @media ${breakpoints().md} {
       height: 700px;
     }
   }

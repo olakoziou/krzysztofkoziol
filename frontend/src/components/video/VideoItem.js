@@ -11,7 +11,7 @@ const Box = styled.div`
   background-color: ${(props) =>
     props.state ? `${colors(0.025).navy1}` : `${colors(0.15).grey}`};
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     height: ${(props) => (props.state ? '400px' : '80px')};
   }
 `;
@@ -33,7 +33,7 @@ const Main = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     flex-direction: row;
   }
 
@@ -42,7 +42,7 @@ const Main = styled.div`
     line-height: 1.4;
     padding-bottom: 20px;
 
-    @media ${breakpoints('md')} {
+    @media ${breakpoints().md} {
       font-size: 22px;
       width: 60%;
       padding: 0 20px;

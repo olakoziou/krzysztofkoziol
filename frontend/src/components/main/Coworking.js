@@ -23,7 +23,7 @@ const CoworkingContentBox = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     flex-direction: row;
   }
 `;
@@ -38,7 +38,7 @@ const Par = styled.p`
   margin: 10px 0 0 0;
   padding: 20px;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     text-align: left;
   }
 `;

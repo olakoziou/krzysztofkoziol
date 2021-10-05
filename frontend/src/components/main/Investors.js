@@ -17,7 +17,7 @@ const Box = styled.div`
 const InvestorsBox = styled.div`
   padding: 40px 0;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     display: flex;
     flex-wrap: wrap;
 
@@ -38,11 +38,11 @@ const InvestorItem = styled.div`
   position: relative;
   /* border-radius: 0px 10px 10px 10px; */
 
-  @media ${breakpoints('sm')} {
+  @media ${breakpoints().sm} {
     width: 65%;
   }
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     width: 80%;
   }
 

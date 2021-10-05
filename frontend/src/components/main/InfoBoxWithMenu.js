@@ -16,7 +16,7 @@ const ProjectNameBox = styled.div`
     justify-content: center;
     min-width: 150px;
 
-    @media ${breakpoints('md')} {
+    @media ${breakpoints().md} {
       flex-direction: column;
     }
   }
@@ -38,15 +38,15 @@ const ProjectName = styled.li`
       : `0 0 12px -5px ${colors().navy1}`};
   transition: all 0.2s;
 
-  /* @media ${breakpoints('xsm')} {
+  /* @media ${breakpoints().xsm} {
     width: 40%;
   } */
 
-  @media ${breakpoints('sm')} {
+  @media ${breakpoints().sm} {
     width: 50%;
   }
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     width: 100%;
   }
 `;

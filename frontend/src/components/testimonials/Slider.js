@@ -4,6 +4,9 @@ import ItemsBox from './ItemsBox';
 import { breakpoints, colors } from '../../styles';
 import koziol1 from '../../assets/koziol1.png';
 import SliderSlick from 'react-slick';
+import Slider2 from 'infinite-react-carousel';
+import Item from './Item';
+import { v4 as uuidv4 } from 'uuid';
 
 const SliderBox = styled.div`
   /* border: 5px solid white; */
@@ -14,92 +17,58 @@ const SliderBox = styled.div`
   position: relative;
   overflow-x: hidden;
 
-  @media ${breakpoints('xsm')} {
+  @media ${breakpoints().xsm} {
     max-width: 90%;
   }
-`;
 
-const Arrows = styled.div`
-  position: absolute;
-  height: 50%;
-  left: -10px;
-  right: -10px;
-  transform: translateY(85%);
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-
-  i {
-    font-size: 45px;
-    height: max-content;
-    color: ${colors().navy1};
-    cursor: pointer;
-    transition: all 0.2s;
-
-    &:hover {
-      text-shadow: 0 1px 10px ${colors().orange};
+  .slider {
+    padding: 100px 0;
+    .carousel-initialized {
+      overflow: unset;
+      .carousel-track {
+        > .carousel-item {
+          /* margin: 0 10px; */
+        }
+      }
     }
   }
 `;
 
-function Slider() {
-  const data = [
-    {
-      id: 1,
-      name: 'Grzegorz Borowski',
-      img: koziol1,
-      company: 'Wawel Apartments',
-      url: '#',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
-    },
-    {
-      id: 2,
-      name: 'Magdalena Makuch',
-      img: koziol1,
-      company: 'Record Consultings',
-      url: '#',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
-    },
-    {
-      id: 3,
-      name: 'Mariusz Mariusz',
-      img: koziol1,
-      company: 'Doctor QBud',
-      url: '#',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
-    },
-    {
-      id: 4,
-      name: 'Dominika Dominika',
-      img: koziol1,
-      company: 'Inspektor budowy',
-      url: '#',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
-    },
-    {
-      id: 5,
-      name: 'Wojciech Matuszny',
-      img: koziol1,
-      company: 'Eco Masuria',
-      url: '#',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
-    },
-    {
-      id: 6,
-      name: 'Ten ZeSzkolenia',
-      img: koziol1,
-      company: 'Ubezpieczenia',
-      url: '#',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
-    },
-  ];
+function Slider({ data }) {
   const [state, setState] = useState(data);
+  const [width, setWidth] = useState();
 
-  useEffect(() => {});
+  // const breakpoint = parseInt(breakpoints().md.split(' ')[1].slice(0, -3));
+  const breakpoint = breakpoints();
 
+  function getWindowDimensions() {
+    const { innerWidth: width } = window;
+    return width;
+  }
+
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setState(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  console.log(state);
+  console.log(breakpoint);
   return (
     <SliderBox>
-      <ItemsBox data={state} />
+      <Slider2 slidesToShow={2} className="slider">
+        {data &&
+          data.map((el) => <Item key={uuidv4()} data={el} width={width} />)}
+        {/* <Item data={data[0]} />
+        <Item data={data[1]} /> */}
+      </Slider2>
     </SliderBox>
   );
 }

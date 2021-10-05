@@ -15,7 +15,7 @@ const Box = styled.div`
   width: 100%;
   margin: 0 auto;
 
-  @media ${breakpoints('lg')} {
+  @media ${breakpoints().lg} {
     width: 90%;
   }
 `;
@@ -24,7 +24,7 @@ const About = styled.div`
   width: 100%;
   position: relative;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -34,7 +34,7 @@ const About = styled.div`
 const AboutContentBox = styled.div`
   position: relative;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     > div {
       /* position: absolute;
       transform: rotate(90deg);
@@ -47,7 +47,7 @@ const AboutContentBox = styled.div`
 
 const Projects = styled.div``;
 const ProjectsContentBox = styled.div`
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     display: flex;
     align-items: center;
   }
@@ -68,7 +68,7 @@ const Par = styled.p`
   padding: 20px;
   /* margin-top: ${(props) => props.projects && '20px'}; */
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     font-size: 22px;
     /* margin-top: ${(props) => props.projects && '60px'}; */
   }
@@ -77,7 +77,7 @@ const Par = styled.p`
 const ImagesBox = styled.div`
   display: flex;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     margin-right: 50px;
     margin-bottom: 20px;
 
@@ -99,7 +99,7 @@ const Image = styled.div`
   box-shadow: 0 0 12px -8px ${colors().navy1};
   transition: all 0.2s;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     &:hover {
       transform: scale(1.05);
     }

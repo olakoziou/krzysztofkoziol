@@ -26,7 +26,7 @@ const Btn = styled.div`
     transform: scale(1.06);
   }
 
-  @media ${breakpoints('lg')} {
+  @media ${breakpoints().lg} {
     bottom: 30px;
     right: 80px;
   }

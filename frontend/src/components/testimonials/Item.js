@@ -1,56 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
 
-let item;
-let width;
-
-const children = (width) => {
-  // let styles = ` &:nth-child(1) {
-  //   left: ${-1 * width}px;
-  // }`;
-  // let x = 1;
-  let styles = '';
-
-  for (let i = 0; i <= 6; i++) {
-    styles += `
-    &:nth-child(${i + 1}) {
-      left: ${i * width}px;
-    }
-    `;
-    // x++;
-  }
-  return styles;
-};
-
 const ItemBox = styled.div`
   min-height: 300px;
-  min-width: 100%;
+  /*min-width: 100%; */
+  width: 90%;
+  margin: 0 auto;
 
   background-color: ${colors(0.35).grey};
   backdrop-filter: blur(10px);
   position: relative;
   border-radius: 12px;
-  /* opacity: 0.75; */
-  transition: all 1s;
-  /* position: absolute; */
-  width: 25%;
+  transition: all 2s;
+  /* width: 25%; */
   box-shadow: 0 0 20px -5px ${colors().navy1};
 
-  @media ${breakpoints('sm')} {
+  /* @media ${breakpoints().sm} {
     min-width: calc(50% - 20px);
     margin: 0 10px;
   }
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     min-width: calc(33% - 30px);
     margin: 0 15px;
   }
 
-  @media ${breakpoints('lg')} {
+  @media ${breakpoints().lg} {
     min-width: calc(25% - 30px);
     margin: 0 15px;
-  }
+  } */
 `;
 const ItemImg = styled.div`
   width: 130px;
@@ -66,8 +45,8 @@ const ItemImg = styled.div`
   transform: translate(-50%, 50%);
 `;
 const ItemContent = styled.div`
-  margin-top: 75px;
-  padding: 15px;
+  /* margin-top: 75px; */
+  padding: 75px 15px 15px;
 
   display: flex;
   flex-direction: column;
@@ -102,14 +81,8 @@ const ItemContent = styled.div`
 `;
 
 function Item({ data }) {
-  const [state, setState] = useState(null);
-  useEffect(() => {
-    item = Array.from(document.querySelectorAll('.overflow div'))[0];
-    width = item.clientWidth + item.offsetLeft * 2;
-    setState(width);
-  }, []);
   return (
-    <ItemBox width={state}>
+    <ItemBox>
       <ItemImg img={data.img}></ItemImg>
       <ItemContent>
         <h5>{data.name}</h5>

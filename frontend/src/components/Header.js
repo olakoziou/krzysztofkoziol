@@ -16,11 +16,11 @@ const Head = styled.header`
     height: 100%;
   }
 
-  @media ${breakpoints('sm')} {
+  @media ${breakpoints().sm} {
     height: 130px;
   }
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     height: 150px;
   }
 `;
@@ -34,15 +34,15 @@ const Logo = styled.div`
     font-weight: 700;
     font-size: 22px;
 
-    @media ${breakpoints('sm')} {
+    @media ${breakpoints().sm} {
       font-size: 24px;
     }
 
-    @media ${breakpoints('md')} {
+    @media ${breakpoints().md} {
       font-size: 28px;
     }
 
-    @media ${breakpoints('lg')} {
+    @media ${breakpoints().lg} {
       font-size: 32px;
     }
   }
@@ -51,7 +51,7 @@ const Menu = styled.div`
   display: none;
   flex-grow: 1;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     display: block;
   }
   nav {
@@ -86,7 +86,7 @@ const MobileMenuBox = styled.div`
   width: 100%;
   height: 100%;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     display: none;
   }
 `;
@@ -104,7 +104,7 @@ const MobileMenu = styled.div`
   z-index: 100;
   transition: all 0.5s;
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     display: none;
   }
 
@@ -172,7 +172,7 @@ const Hamburger = styled.div`
         : 'rotate(0) translate(0, 0)'};
   }
 
-  @media ${breakpoints('md')} {
+  @media ${breakpoints().md} {
     display: none;
   }
 `;
