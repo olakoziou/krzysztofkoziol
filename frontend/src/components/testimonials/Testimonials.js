@@ -5,6 +5,7 @@ import { colors } from '../../styles';
 import koziol1 from '../../assets/koziol1.png';
 import Container from '../Container';
 import Slider from './Slider';
+import Title from '../Title';
 
 const TestimonialsBox = styled.div`
   min-height: 300px;

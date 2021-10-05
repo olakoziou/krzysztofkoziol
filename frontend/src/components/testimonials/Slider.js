@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import ItemsBox from './ItemsBox';
-import { breakpoints, colors } from '../../styles';
-import koziol1 from '../../assets/koziol1.png';
-import SliderSlick from 'react-slick';
+import { breakpoints } from '../../styles';
 import Slider2 from 'infinite-react-carousel';
 import Item from './Item';
 import { v4 as uuidv4 } from 'uuid';
+import { breakpointsValues, SM, XSM, MD, LG } from '../../constans';
 
 const SliderBox = styled.div`
   /* border: 5px solid white; */
   max-width: 100%;
   height: min-content;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 20px 0;
   position: relative;
   overflow-x: hidden;
 
@@ -22,12 +20,19 @@ const SliderBox = styled.div`
   }
 
   .slider {
-    padding: 100px 0;
+    padding: 100px 0 50px;
     .carousel-initialized {
       overflow: unset;
       .carousel-track {
         > .carousel-item {
-          /* margin: 0 10px; */
+        }
+      }
+    }
+    .carousel-dots {
+      button {
+        &::before {
+          font-size: 24px;
+          line-height: 50px;
         }
       }
     }
@@ -35,20 +40,28 @@ const SliderBox = styled.div`
 `;
 
 function Slider({ data }) {
-  const [state, setState] = useState(data);
-  const [width, setWidth] = useState();
-
-  // const breakpoint = parseInt(breakpoints().md.split(' ')[1].slice(0, -3));
-  const breakpoint = breakpoints();
+  const [state, setState] = useState(window.innerWidth);
 
   function getWindowDimensions() {
     const { innerWidth: width } = window;
     return width;
   }
 
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
+  const checkWidth = () => {
+    if (state <= XSM) {
+      return 1;
+    } else if (state >= XSM && state <= SM) {
+      return 1;
+    } else if (state >= SM && state <= MD) {
+      return 2;
+    } else if (state >= MD && state <= LG) {
+      return 3;
+    } else {
+      return 4;
+    }
+  };
+
+  console.log(breakpointsValues().XSM);
 
   useEffect(() => {
     function handleResize() {
@@ -56,18 +69,21 @@ function Slider({ data }) {
     }
 
     window.addEventListener('resize', handleResize);
+
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  console.log(state);
-  console.log(breakpoint);
   return (
     <SliderBox>
-      <Slider2 slidesToShow={2} className="slider">
-        {data &&
-          data.map((el) => <Item key={uuidv4()} data={el} width={width} />)}
-        {/* <Item data={data[0]} />
-        <Item data={data[1]} /> */}
+      <Slider2
+        dots
+        slidesToShow={checkWidth()}
+        autoplay={true}
+        arrows={false}
+        autoplaySpeed={4000}
+        className="slider"
+      >
+        {data && data.map((el) => <Item key={uuidv4()} data={el} />)}
       </Slider2>
     </SliderBox>
   );

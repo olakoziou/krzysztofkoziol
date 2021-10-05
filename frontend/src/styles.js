@@ -1,3 +1,5 @@
+import { breakpointsValues } from './constans';
+
 export const colors = (alpha = 1) => {
   return {
     navy1: `rgba(15, 32, 39, ${alpha})`,
@@ -38,10 +40,10 @@ export const breakpoints = (bp) => {
   // }
 
   return {
-    xsm: `(min-width: 350px)`,
-    sm: `(min-width: 600px)`,
-    md: `(min-width: 960px)`,
-    lg: `(min-width: 1280px)`,
-    xl: `(min-width: 1920px)`,
+    xsm: `(min-width: ${breakpointsValues().XSM}px)`,
+    sm: `(min-width: ${breakpointsValues().SM}px)`,
+    md: `(min-width: ${breakpointsValues().MD}px)`,
+    lg: `(min-width: ${breakpointsValues().LG}px)`,
+    xl: `(min-width: ${breakpointsValues().XL}px)`,
   };
 };
