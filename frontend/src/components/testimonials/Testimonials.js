@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import testimonials from '../../assets/testimonials.jpg';
 import testimonialsXsm from '../../assets/testimonials-xsm.jpg';
@@ -10,6 +10,7 @@ import { colors } from '../../styles';
 import koziol1 from '../../assets/koziol1.png';
 import Container from '../Container';
 import Slider from './Slider';
+import { SM, XSM, MD, LG } from '../../constans';
 
 const TestimonialsBox = styled.div`
   min-height: 300px;
@@ -84,8 +85,39 @@ const data = [
 ];
 
 function Testimonials() {
+  const [state, setState] = useState(window.innerWidth);
+
+  function getWindowDimensions() {
+    const { innerWidth: width } = window;
+    return width;
+  }
+
+  const checkWidth = () => {
+    if (state <= XSM) {
+      return testimonialsXsm;
+    } else if (state >= XSM && state <= SM) {
+      return testimonialsSm;
+    } else if (state >= SM && state <= MD) {
+      return testimonialsMd;
+    } else if (state >= MD && state <= LG) {
+      return testimonialsLg;
+    } else {
+      return testimonialsXl;
+    }
+  };
+
+  useEffect(() => {
+    function handleResize() {
+      setState(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <TestimonialsBox bgc={testimonials}>
+    <TestimonialsBox bgc={checkWidth()}>
       <Container>
         <Slider data={data} />
       </Container>
