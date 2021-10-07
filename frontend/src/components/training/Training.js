@@ -36,10 +36,6 @@ const Item = styled.div`
     width: 50%;
   }
 
-  &:nth-child(even) {
-    /* text-align: end; */
-  }
-
   i {
     color: ${colors().orange};
     padding-right: 10px;
@@ -62,7 +58,6 @@ const Par = styled.div`
 `;
 
 const List = styled.ol`
-  /* padding: 10px 0; */
   li {
     font-size: 20px;
   }
@@ -152,10 +147,6 @@ function Training() {
     }
     fetchData();
   }, []);
-
-  console.log(gallery);
-  console.log(training);
-  console.log(display);
 
   return (
     <Box>

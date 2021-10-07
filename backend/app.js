@@ -25,6 +25,7 @@ app.use(express.json());
 app.use('/api/trainings', trainingRouter);
 app.use('/api/gallery', galleryRouter);
 app.use('/api/videos', videoRouter);
+// app.use('/kup-szkolenie', videoRouter);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

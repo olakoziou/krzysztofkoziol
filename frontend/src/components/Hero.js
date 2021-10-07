@@ -11,7 +11,6 @@ const Box = styled.div`
   position: relative;
 
   @media ${breakpoints().sm} {
-    /* min-height: calc(100vh - 100px); */
     padding: 60px 0;
     display: flex;
     align-items: center;

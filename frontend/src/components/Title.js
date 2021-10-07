@@ -9,20 +9,8 @@ const Text = styled.div`
   position: relative;
 
   width: max-content;
-  /* width: 100%; */
   margin: 0 auto;
   padding: 0 15px;
-
-  /* @media ${breakpoints().xsm} {
-    width: 90%;
-  }
-
-  @media ${breakpoints().sm} {
-    width: 80%;
-  }
-
-  
-  } */
 
   @media ${breakpoints().sm} {
   }

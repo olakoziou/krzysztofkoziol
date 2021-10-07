@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { colors } from '../styles';
 import Container from './Container';
-import Paragraph from './main/Paragraph';
 import Title from './Title';
 
 const Foot = styled.footer`
@@ -67,17 +65,6 @@ function Footer() {
     <Foot>
       <Container>
         <FooterBox>
-          {/* <ul>
-          <li>
-            <Link to="/">główna</Link>
-          </li>
-          <li>
-            <Link to="/konsultacje">konsultacje</Link>
-          </li>
-          <li>
-            <Link to="/szkolenia">szkolenia</Link>
-          </li>
-        </ul> */}
           <Title text="KONTAKT" color={colors().orange} size={44} />
           <Par>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum,

@@ -23,6 +23,10 @@ const Box = styled.div`
   @media ${breakpoints().lg} {
     width: 75%;
   }
+
+  @media ${breakpoints().xl} {
+    width: 70%;
+  }
 `;
 
 function Container({ children }) {

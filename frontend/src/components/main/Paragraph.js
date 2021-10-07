@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { colors } from '../../styles';
 
 const P = styled.p`
-  /* margin-top: -40px; */
   font-size: 20px;
   line-height: 1.6;
   color: ${colors().navy1};
@@ -11,7 +10,6 @@ const P = styled.p`
   border-radius: 12px;
   margin: 10px 0 0 0;
   padding: 20px;
-  /* margin-top: 20px; */
 `;
 
 function Paragraph({ text, bgc }) {

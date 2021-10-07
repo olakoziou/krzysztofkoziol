@@ -36,7 +36,6 @@ const InvestorItem = styled.div`
   background-color: ${colors(0.1).grey};
   box-shadow: 0 0 12px -2px ${colors().navy2};
   position: relative;
-  /* border-radius: 0px 10px 10px 10px; */
 
   @media ${breakpoints().sm} {
     width: 65%;

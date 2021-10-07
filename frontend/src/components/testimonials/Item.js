@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints, colors } from '../../styles';
+import { colors } from '../../styles';
 
 const ItemBox = styled.div`
   min-height: 300px;
-  /*min-width: 100%; */
   width: 90%;
   margin: 0 auto;
 
@@ -13,23 +12,7 @@ const ItemBox = styled.div`
   position: relative;
   border-radius: 12px;
   transition: all 2s;
-  /* width: 25%; */
   box-shadow: 0 0 20px -5px ${colors().navy1};
-
-  /* @media ${breakpoints().sm} {
-    min-width: calc(50% - 20px);
-    margin: 0 10px;
-  }
-
-  @media ${breakpoints().md} {
-    min-width: calc(33% - 30px);
-    margin: 0 15px;
-  }
-
-  @media ${breakpoints().lg} {
-    min-width: calc(25% - 30px);
-    margin: 0 15px;
-  } */
 `;
 const ItemImg = styled.div`
   width: 130px;
@@ -45,7 +28,6 @@ const ItemImg = styled.div`
   transform: translate(-50%, 50%);
 `;
 const ItemContent = styled.div`
-  /* margin-top: 75px; */
   padding: 75px 15px 15px;
 
   display: flex;

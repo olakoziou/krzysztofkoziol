@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Title from '../Title';
-import { breakpoints, colors } from '../../styles';
+import { colors } from '../../styles';
 import { Zoom } from 'react-reveal';
 
 const Box = styled.div``;

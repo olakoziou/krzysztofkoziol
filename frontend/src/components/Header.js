@@ -7,7 +7,6 @@ import { breakpoints, colors } from '../styles';
 const Head = styled.header`
   height: 100px;
   position: relative;
-  /* overflow-x: hidden; */
 
   > div {
     display: flex;
@@ -82,7 +81,6 @@ const Menu = styled.div`
 `;
 
 const MobileMenuBox = styled.div`
-  /* position: relative; */
   width: 100%;
   height: 100%;
 
@@ -109,8 +107,6 @@ const MobileMenu = styled.div`
   }
 
   nav {
-    /* height: 100%;
-    width: 100%; */
     position: absolute;
     top: 50%;
     left: 50%;

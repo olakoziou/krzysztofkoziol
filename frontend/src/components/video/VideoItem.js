@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
-import VideoIntro from './VideoIntro';
 
 const Box = styled.div`
   height: ${(props) => (props.state ? '300px' : '80px')};
@@ -17,7 +16,6 @@ const Box = styled.div`
 `;
 const Heading = styled.div`
   padding: 30px 20px;
-  /* height: ${(props) => (props.height ? '10%' : '100%')}; */
   display: flex;
   justify-content: space-between;
   align-items: center;

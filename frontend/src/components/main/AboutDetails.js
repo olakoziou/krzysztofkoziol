@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
-// import Title from '../Title';
 import InfoBoxWithMenu from './InfoBoxWithMenu';
 import { Bounce } from 'react-reveal';
 import img2 from '../../assets/img2.jpg';
 import img3 from '../../assets/img3.jpg';
-import Paragraph from './Paragraph';
 
 const Box = styled.div`
   height: ${(props) => (!props.isOpened === true ? '0' : '500px')};
@@ -33,16 +31,6 @@ const About = styled.div`
 
 const AboutContentBox = styled.div`
   position: relative;
-
-  @media ${breakpoints().md} {
-    > div {
-      /* position: absolute;
-      transform: rotate(90deg);
-      transform-origin: 50% 50%; */
-      /* right: 0;
-      top: 0; */
-    }
-  }
 `;
 
 const Projects = styled.div``;
@@ -64,13 +52,10 @@ const Par = styled.p`
   font-size: 20px;
   line-height: 1.6;
   color: ${colors().navy1};
-  /* padding-bottom: 30px; */
   padding: 20px;
-  /* margin-top: ${(props) => props.projects && '20px'}; */
 
   @media ${breakpoints().md} {
     font-size: 22px;
-    /* margin-top: ${(props) => props.projects && '60px'}; */
   }
 `;
 
@@ -150,7 +135,11 @@ function AboutDetails({ isOpened }) {
               kilka bardzo wartościowych szkoleń branżowych. Już w sierpniu tego
               roku współzałożyłem firmę{' '}
               <span>
-                <a href="https://sunstreetinvestment.pl/#/" target="_blank">
+                <a
+                  href="https://sunstreetinvestment.pl/#/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   SunStreet Investments
                 </a>
               </span>
@@ -158,14 +147,18 @@ function AboutDetails({ isOpened }) {
               się wokół obrotu nieruchomościami, inwestowania oraz pomnażania
               gotówki moich inwestorów. W maju 2020 roku współzałożyłem firmę{' '}
               <span>
-                <a href="https://ecomasuria.pl/" target="_blank">
+                <a
+                  href="https://ecomasuria.pl/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Eco Masuria
                 </a>
               </span>
               , w której odpowiadam za budowę kompleksu
               konferencyjno-wypoczynkowego{' '}
               <span>
-                <a href="https://narusa.pl/" target="_blank">
+                <a href="https://narusa.pl/" target="_blank" rel="noreferrer">
                   Narusa - Leśna Przystań
                 </a>
               </span>

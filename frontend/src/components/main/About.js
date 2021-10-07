@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
 import { colors } from '../../styles';
 import Container from '../Container';
 import AboutDetails from './AboutDetails';
@@ -9,12 +8,9 @@ import AboutIntro from './AboutIntro';
 const Box = styled.div`
   background-color: ${colors().grey};
   min-height: 200px;
-  /* height: 400px; */
   padding: 40px 0;
   line-height: 1.3;
   position: relative;
-  /* overflow: hidden; */
-  /* z-index: 100; */
 
   &::after {
     content: '';
@@ -24,7 +20,6 @@ const Box = styled.div`
     right: 0;
     height: 50px;
     background-color: ${colors().grey};
-
     z-index: 10;
   }
 `;

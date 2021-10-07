@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import testimonials from '../../assets/testimonials.jpg';
+import testimonialsXsm from '../../assets/testimonials-xsm.jpg';
+import testimonialsSm from '../../assets/testimonials-sm.jpg';
+import testimonialsMd from '../../assets/testimonials-md.jpg';
+import testimonialsLg from '../../assets/testimonials-lg.jpg';
+import testimonialsXl from '../../assets/testimonials-xl.jpg';
 import { colors } from '../../styles';
 import koziol1 from '../../assets/koziol1.png';
 import Container from '../Container';
 import Slider from './Slider';
-import Title from '../Title';
 
 const TestimonialsBox = styled.div`
   min-height: 300px;

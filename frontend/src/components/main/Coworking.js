@@ -14,8 +14,6 @@ const Box = styled.div`
   > div h3 {
     text-align: center;
     padding-top: 20px;
-    /* word-wrap: break-word; */
-    /* word-break: break-all; */
   }
 `;
 

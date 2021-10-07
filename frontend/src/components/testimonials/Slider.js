@@ -4,10 +4,9 @@ import { breakpoints } from '../../styles';
 import Slider2 from 'infinite-react-carousel';
 import Item from './Item';
 import { v4 as uuidv4 } from 'uuid';
-import { breakpointsValues, SM, XSM, MD, LG } from '../../constans';
+import { SM, XSM, MD, LG } from '../../constans';
 
 const SliderBox = styled.div`
-  /* border: 5px solid white; */
   max-width: 100%;
   height: min-content;
   margin: 0 auto;
@@ -60,8 +59,6 @@ function Slider({ data }) {
       return 4;
     }
   };
-
-  console.log(breakpointsValues().XSM);
 
   useEffect(() => {
     function handleResize() {

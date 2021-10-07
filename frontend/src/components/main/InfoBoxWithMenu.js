@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
-import Paragraph from './Paragraph';
 
 const InfoBox = styled.div``;
 
 const ProjectNameBox = styled.div`
-  /* overflow-x: scroll; */
   padding: 0 10px;
 
   ul {
@@ -38,10 +36,6 @@ const ProjectName = styled.li`
       : `0 0 12px -5px ${colors().navy1}`};
   transition: all 0.2s;
 
-  /* @media ${breakpoints().xsm} {
-    width: 40%;
-  } */
-
   @media ${breakpoints().sm} {
     width: 50%;
   }
@@ -51,7 +45,7 @@ const ProjectName = styled.li`
   }
 `;
 
-function InfoBoxWithMenu({ data, handleClick, text, active, bgc }) {
+function InfoBoxWithMenu({ data, handleClick, active }) {
   return (
     <InfoBox>
       <ProjectNameBox>
@@ -68,7 +62,6 @@ function InfoBoxWithMenu({ data, handleClick, text, active, bgc }) {
           ))}
         </ul>
       </ProjectNameBox>
-      {/* <Paragraph text={text} bgc={bgc} /> */}
     </InfoBox>
   );
 }
