@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Zoom } from 'react-reveal';
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
@@ -28,6 +28,7 @@ const MainBox = styled.div`
 
 function Video() {
   const [videos, setVideos] = useState([]);
+  const ref = useRef();
 
   useEffect(() => {
     async function fetchData() {
@@ -35,10 +36,14 @@ function Video() {
       setVideos(response.data.data.videos);
     }
     fetchData();
+    setTimeout(() => {
+      ref.current &&
+        window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' });
+    }, 300);
   }, []);
 
   return (
-    <Box>
+    <Box ref={ref}>
       <Container>
         <Zoom>
           <Title size={38} after={true} text="Wideo" />

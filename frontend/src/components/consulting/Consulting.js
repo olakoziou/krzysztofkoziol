@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
 import { Zoom } from 'react-reveal';
@@ -26,8 +26,16 @@ const Calendar = styled.div`
 const Form = styled.div``;
 
 function Consulting() {
+  const ref = useRef();
+
+  useEffect(() => {
+    setTimeout(() => {
+      ref.current &&
+        window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' });
+    }, 300);
+  }, []);
   return (
-    <Box>
+    <Box ref={ref}>
       <Container>
         <Zoom>
           <Title text="Umów się na konsultację" size={38} after={true} />
