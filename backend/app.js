@@ -8,6 +8,7 @@ const connectDB = require('./db');
 const trainingRouter = require('./routes/trainingRoutes');
 const galleryRouter = require('./routes/galleryRoutes');
 const videoRouter = require('./routes/videoRoutes');
+const buyTrainingRouter = require('./routes/buyTrainingRoutes');
 
 const app = express();
 const path = require('path');
@@ -25,7 +26,7 @@ app.use(express.json());
 app.use('/api/trainings', trainingRouter);
 app.use('/api/gallery', galleryRouter);
 app.use('/api/videos', videoRouter);
-// app.use('/kup-szkolenie', videoRouter);
+app.use('/api/kup-szkolenie', buyTrainingRouter);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

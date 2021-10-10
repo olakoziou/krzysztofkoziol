@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Zoom } from 'react-reveal';
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
@@ -7,6 +7,8 @@ import Testimonials from '../testimonials/Testimonials';
 import Title from '../Title';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC);
 
 const Box = styled.div`
   min-height: 300px;
@@ -167,6 +169,7 @@ function Training() {
   const [training, setTraining] = useState([]);
   const [gallery, setGallery] = useState([]);
   const [display, setDisplay] = useState(null);
+  const ref = useRef();
 
   useEffect(() => {
     async function fetchData() {
@@ -178,14 +181,26 @@ function Training() {
       setDisplay(imgs.data.data.gallery[0].display);
     }
     fetchData();
+
+    setTimeout(() => {
+      ref.current &&
+        window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' });
+    }, 300);
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const stripeResp = await axios('/api/kup-szkolenie');
+    const id = await stripeResp.data.id;
+    const stripe = await stripePromise;
+    const { error } = await stripe.redirectToCheckout({
+      sessionId: id,
+    });
+    console.log(error);
   };
 
   return (
-    <Box>
+    <Box ref={ref}>
       <Container>
         <Zoom>
           <Title text="Szkolenia" size={38} after={true} />{' '}
@@ -223,7 +238,11 @@ function Training() {
                     </li>
                   ))}
               </List>
-              <Form onSubmit={handleSubmit}>
+              <Form
+                onSubmit={handleSubmit}
+                action="/api/kup-szkolenie"
+                // method="POST"
+              >
                 <div>
                   <input type="checkbox" name="check" />
                   <label htmlFor="check">
@@ -242,7 +261,6 @@ function Training() {
               <Button>Kup szkolenie</Button>
             </Description>
           </Zoom>
-          {gallery && gallery.map((el) => console.log(el.imgs))}
           {display ? (
             <Gallery>
               <Zoom>

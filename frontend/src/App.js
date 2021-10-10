@@ -11,6 +11,10 @@ import Training from './components/training/Training';
 import Privacy from './components/privacy/Privacy';
 import NoMatch404 from './components/NoMatch404';
 import Video from './components/video/Video';
+import Success from './components/checkout/Success';
+import Cancel from './components/checkout/Cancel';
+
+console.log(process.env);
 
 function App() {
   return (
@@ -36,9 +40,15 @@ function App() {
             <Route path="/polityka-prywatnosci">
               <Privacy />
             </Route>
-            <Route path="*">
-              <NoMatch404 />
+            <Route path="/zakupiono-szkolenie">
+              <Success />
             </Route>
+            <Route path="/anulowano-zakup">
+              <Cancel />
+            </Route>
+            {/* <Route path="*">
+              <NoMatch404 />
+            </Route> */}
           </Switch>
 
           <Footer />
