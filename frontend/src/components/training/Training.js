@@ -66,29 +66,6 @@ const List = styled.ol`
   }
 `;
 
-const Button = styled.div`
-  width: 90%;
-  margin: 0 auto;
-  max-width: 250px;
-  background-color: ${colors().violet};
-  color: ${colors().grey};
-  font-size: 26px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 15px;
-  margin-top: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 12px -5px ${colors().navy1};
-  cursor: pointer;
-  transition: all 0.2s;
-
-  &:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 15px -5px ${colors().navy1};
-  }
-`;
-
 const Gallery = styled.div`
   width: 80%;
   margin: 0 auto;
@@ -141,6 +118,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   input[type='submit'] {
     outline: none;
     border: none;
@@ -165,10 +143,38 @@ const Form = styled.form`
   }
 `;
 
+const Spinner = styled.div`
+  outline: none;
+  border: none;
+  width: 100%;
+  background-color: ${colors().violet};
+  color: ${colors().grey};
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px -5px ${colors().navy1};
+  cursor: pointer;
+
+  i {
+    animation: spinner 1.5s linear infinite;
+  }
+
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
 function Training() {
   const [training, setTraining] = useState([]);
   const [gallery, setGallery] = useState([]);
   const [display, setDisplay] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const ref = useRef();
 
   useEffect(() => {
@@ -190,12 +196,14 @@ function Training() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const stripeResp = await axios('/api/kup-szkolenie');
     const id = await stripeResp.data.id;
     const stripe = await stripePromise;
     const { error } = await stripe.redirectToCheckout({
       sessionId: id,
     });
+
     console.log(error);
   };
 
@@ -255,10 +263,15 @@ function Training() {
                   </label>
                 </div>
                 <div>
-                  <input type="submit" value="Kup szkolenie" />
+                  {isLoading ? (
+                    <Spinner>
+                      <i className="fa fa-spinner"></i>
+                    </Spinner>
+                  ) : (
+                    <input type="submit" value="Kup szkolenie" />
+                  )}
                 </div>
               </Form>
-              <Button>Kup szkolenie</Button>
             </Description>
           </Zoom>
           {display ? (
