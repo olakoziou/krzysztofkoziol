@@ -6,6 +6,7 @@ import Container from '../Container';
 import Testimonials from '../testimonials/Testimonials';
 import Title from '../Title';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Box = styled.div`
   min-height: 300px;
@@ -131,6 +132,37 @@ const GalleryItem = styled.div`
   }
 `;
 
+const Form = styled.form`
+  width: 90%;
+  margin: 0 auto;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  input[type='submit'] {
+    outline: none;
+    border: none;
+    width: 100%;
+    background-color: ${colors().violet};
+    color: ${colors().grey};
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px -5px ${colors().navy1};
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px -5px ${colors().navy1};
+    }
+  }
+`;
+
 function Training() {
   const [training, setTraining] = useState([]);
   const [gallery, setGallery] = useState([]);
@@ -147,6 +179,10 @@ function Training() {
     }
     fetchData();
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <Box>
@@ -187,6 +223,22 @@ function Training() {
                     </li>
                   ))}
               </List>
+              <Form onSubmit={handleSubmit}>
+                <div>
+                  <input type="checkbox" name="check" />
+                  <label htmlFor="check">
+                    {' '}
+                    Kupując szkolenie wyrażam zgodę na przetwarzanie moich
+                    danych osobowych.Zasady przetwarzania danych osobowych
+                    znajdziesz w{' '}
+                    <Link to="/polityka-prywatnosci">polityce prywatności</Link>
+                    .
+                  </label>
+                </div>
+                <div>
+                  <input type="submit" value="Kup szkolenie" />
+                </div>
+              </Form>
               <Button>Kup szkolenie</Button>
             </Description>
           </Zoom>

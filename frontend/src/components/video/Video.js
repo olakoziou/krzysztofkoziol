@@ -37,8 +37,6 @@ function Video() {
     fetchData();
   }, []);
 
-  console.log(videos);
-
   return (
     <Box>
       <Container>

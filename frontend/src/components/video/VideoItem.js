@@ -3,16 +3,27 @@ import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
 
 const Box = styled.div`
-  height: ${(props) => (props.state ? '300px' : '80px')};
+  height: ${(props) => (props.state ? '300px' : 'auto')};
+  /* max-height: 120px; */
   overflow-y: ${(props) => (props.state ? 'scroll' : 'hidden')};
+  overflow-x: hidden;
   border-bottom: 1px solid ${colors().darkGrey};
   transition: all 0.3s ease-out;
   background-color: ${(props) =>
     props.state ? `${colors(0.025).navy1}` : `${colors(0.15).grey}`};
 
-  @media ${breakpoints().md} {
-    height: ${(props) => (props.state ? '400px' : '80px')};
+  /* @media ${breakpoints().xsm} {
+    max-height: 105px;
   }
+
+  @media ${breakpoints().sm} {
+    max-height: 90px;
+  } */
+
+  /* @media ${breakpoints().md} {
+    height: ${(props) => (props.state ? '400px' : '80px')};
+    max-height: 80px;
+  } */
 `;
 const Heading = styled.div`
   padding: 30px 20px;
@@ -24,9 +35,18 @@ const Heading = styled.div`
   h3 {
     font-size: 22px;
   }
+
+  i {
+    flex-basis: 20%;
+    text-align: end;
+  }
 `;
 const Main = styled.div`
-  padding: 0 0 20px;
+  padding: 10px 0 20px;
+  opacity: ${(props) => (props.state ? '1' : '0')};
+  visibility: ${(props) => (props.state ? 'visible' : 'hidden')};
+  transition: all 0.2s;
+  position: ${(props) => (props.state ? 'relative' : 'absolute')};
 
   display: flex;
   flex-direction: column;
@@ -51,16 +71,21 @@ const Main = styled.div`
 function VideoItem({ data }) {
   const [isOpened, setOpened] = useState(false);
 
+  const handleClick = (e) => {
+    e.stopPropagation();
+    setOpened((prev) => !prev);
+  };
+
   return (
     <Box state={isOpened}>
-      <Heading onClick={() => setOpened((prev) => !prev)}>
+      <Heading onClick={handleClick}>
         <h3>{data.title}</h3>
         <i className="fa fa-chevron-down"></i>
       </Heading>
-      <Main>
+      <Main state={isOpened}>
         <p>{data.description}</p>
         <iframe
-          width="350"
+          width="auto"
           height="220"
           src={`${data.url}`}
           title="YouTube video player"

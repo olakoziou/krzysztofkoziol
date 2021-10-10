@@ -98,7 +98,12 @@ const MobileMenu = styled.div`
   width: 100vw;
   transform: ${(props) =>
     props.isOpened ? 'translateX(0)' : 'translateX(100%)'};
-  background-color: ${colors().navy2};
+  background: ${colors().navy2};
+  background: linear-gradient(
+    180deg,
+    ${colors().navy1} 0%,
+    ${colors().navy3} 100%
+  );
   z-index: 100;
   transition: all 0.5s;
 
@@ -110,16 +115,16 @@ const MobileMenu = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -55%);
 
     ul {
       li {
         a {
           display: inline-block;
           width: 100%;
-          padding: 15px;
+          padding: 25px;
           text-align: center;
-          font-size: 32px;
+          font-size: 38px;
           color: ${colors().orange};
         }
       }

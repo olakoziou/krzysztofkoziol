@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
 import InfoBoxWithMenu from './InfoBoxWithMenu';
 import { Bounce } from 'react-reveal';
-import img2 from '../../assets/img2.jpg';
-import img3 from '../../assets/img3.jpg';
+import kkoziol1 from '../../assets/kkoziol1.jpg';
+import kkoziol2 from '../../assets/kkoziol2.jpg';
 
 const Box = styled.div`
   height: ${(props) => (!props.isOpened === true ? '0' : '500px')};
@@ -166,8 +166,8 @@ function AboutDetails({ isOpened }) {
             </Par>
           </AboutContentBox>
           <ImagesBox>
-            <Image img={img2}></Image>
-            <Image img={img3}></Image>
+            <Image img={kkoziol1}></Image>
+            <Image img={kkoziol2}></Image>
           </ImagesBox>
         </About>
 

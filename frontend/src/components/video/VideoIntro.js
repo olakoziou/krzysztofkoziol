@@ -43,6 +43,9 @@ const Content = styled.div`
 const Video = styled.div`
   padding: 20px 0;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media ${breakpoints().md} {
     width: 45%;
@@ -61,13 +64,13 @@ function VideoIntro() {
           sposób na inwestowanie w nieruchomości. Na początku wytłumaczę Ci
           podstawowe pojęcia oraz wyjaśnię, dlaczego to właśnie nieruchomości są
           najlepszym miejscem na pomnażanie swoich oszczędności. W kolejnych
-          filmikach przejdę do bardziej zaawansowanych zagadnień. Ponadto
+          filmikach przejdę do bardziej zaawansowanych zagadnień. Poza tym
           postaram się odpowiedzieć na najszczęściej zadawane mi pytania.
         </p>
       </Content>
       <Video>
         <iframe
-          width="400"
+          width="500"
           height="280"
           src="https://www.youtube.com/embed/PUGW7ehLrww"
           title="YouTube video player"

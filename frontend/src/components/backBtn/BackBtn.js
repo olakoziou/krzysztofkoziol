@@ -21,9 +21,15 @@ const Btn = styled.div`
   z-index: 1000;
   cursor: pointer;
 
-  &:hover {
-    box-shadow: 0 0 30px -4px ${colors().navy1};
-    transform: scale(1.06);
+  /* &:hover {
+    color: red;
+  } */
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 0 30px -4px ${colors().navy1};
+      transform: scale(1.06);
+    }
   }
 
   @media ${breakpoints().lg} {
@@ -43,6 +49,7 @@ function BackBtn() {
         setShowButton(false);
       }
     });
+    console.dir(document.querySelector('.btn'));
   }, []);
 
   const scrollToTop = () => {
@@ -50,7 +57,7 @@ function BackBtn() {
   };
 
   return (
-    <Btn onClick={scrollToTop} showButton={showButton}>
+    <Btn onClick={scrollToTop} showButton={showButton} className="btn">
       <i className="fa fa-chevron-up"></i>
     </Btn>
   );

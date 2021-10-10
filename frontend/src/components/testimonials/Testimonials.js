@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import testimonials from '../../assets/testimonials.jpg';
 import testimonialsXsm from '../../assets/testimonials-xsm.jpg';
 import testimonialsSm from '../../assets/testimonials-sm.jpg';
 import testimonialsMd from '../../assets/testimonials-md.jpg';
