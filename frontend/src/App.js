@@ -14,8 +14,6 @@ import Video from './components/video/Video';
 import Success from './components/checkout/Success';
 import Cancel from './components/checkout/Cancel';
 
-console.log(process.env);
-
 function App() {
   return (
     <div className="App">
