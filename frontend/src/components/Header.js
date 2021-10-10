@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Container from './Container';
 import { Link } from 'react-router-dom';
 import { breakpoints, colors } from '../styles';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeNav } from '../redux/mobileNavSlice';
 
 const Head = styled.header`
   height: 100px;
@@ -180,9 +182,19 @@ const Hamburger = styled.div`
 
 function Header() {
   const [isOpened, setOpened] = useState(false);
+  const mobileNav = useSelector((state) => state.mobileNav.value);
+  const dispatch = useDispatch();
+
   const handleOpenMenu = (e) => {
     setOpened((prev) => !prev);
+    dispatch(changeNav());
   };
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    body.style.overflow = mobileNav ? 'hidden' : 'auto';
+  }, [mobileNav]);
+
   return (
     <Head>
       <Container>

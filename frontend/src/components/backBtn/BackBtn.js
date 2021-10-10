@@ -42,14 +42,17 @@ function BackBtn() {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
-    });
-    console.dir(document.querySelector('.btn'));
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (window.pageYOffset > 300) {
+          setShowButton(true);
+        } else {
+          setShowButton(false);
+        }
+      },
+      { passive: true }
+    );
   }, []);
 
   const scrollToTop = () => {
@@ -57,7 +60,7 @@ function BackBtn() {
   };
 
   return (
-    <Btn onClick={scrollToTop} showButton={showButton} className="btn">
+    <Btn onClick={scrollToTop} showButton={showButton}>
       <i className="fa fa-chevron-up"></i>
     </Btn>
   );
