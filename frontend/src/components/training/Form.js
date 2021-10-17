@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Spinner from '../../Spinner';
-import { colors } from '../../styles';
+import { breakpoints, colors } from '../../styles';
 import Title from '../Title';
 
-const Box = styled.div``;
+const Box = styled.div`
+  padding: 50px 0 30px;
+`;
 
 const FormContainer = styled.form`
   width: 90%;
@@ -16,33 +18,46 @@ const FormContainer = styled.form`
   flex-direction: column;
   justify-content: center;
 
-  input[type='submit'] {
-    outline: none;
-    border: none;
+  @media ${breakpoints().sm} {
+    max-width: 350px;
+  }
+
+  @media ${breakpoints().md} {
+    max-width: 450px;
+  }
+
+  div:last-of-type {
     width: 100%;
-    background-color: ${colors().violet};
-    color: ${colors().grey};
-    font-size: 26px;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 15px;
-    margin-top: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 12px -5px ${colors().navy1};
-    cursor: pointer;
-    transition: all 0.2s;
+    max-width: 300px;
+    margin: 30px auto 0;
+    input[type='submit'] {
+      outline: none;
+      border: none;
+      width: 100%;
 
-    @media (hover: hover) {
-      &:not(:disabled):hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 15px -5px ${colors().navy1};
+      background-color: ${colors().violet};
+      color: ${colors().grey};
+      font-size: 26px;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px -5px ${colors().navy1};
+      cursor: pointer;
+      transition: all 0.2s;
+
+      @media (hover: hover) {
+        &:not(:disabled):hover {
+          transform: scale(1.03);
+          box-shadow: 0 0 15px -5px ${colors().navy1};
+        }
       }
-    }
 
-    &:disabled {
-      background-color: ${colors(0.5).darkGrey};
-      cursor: unset;
+      &:disabled {
+        background-color: ${colors(0.5).darkGrey};
+        cursor: unset;
+      }
     }
   }
 `;
@@ -174,20 +189,20 @@ function Form({ isLoading, getFromOffset, isMounted }) {
     company: '',
     errors: {
       name: '',
-      address1: '',
-      address2: '',
-      address3: '',
-      email: '',
-      nip: '',
-      company: '',
+      address1: 'Minimum 8 znaków',
+      address2: 'Minimum 6 znaków',
+      address3: 'Minimum 3 znaki',
+      email: 'Nieprawidłowy email',
+      nip: 'Minimum 8 znaków',
+      company: 'Minimum 3 znaki',
     },
   });
   const [toggle, setToggle] = useState(true);
   const [disabled, setDisabled] = useState(true);
+  const [hasChanged, setHasChanged] = useState(false);
   const ref = useRef();
 
   useEffect(() => {
-    console.dir(ref.current.offsetTop);
     getFromOffset(ref.current);
   }, []);
   const handleChange = (e) => {
@@ -195,6 +210,7 @@ function Form({ isLoading, getFromOffset, isMounted }) {
       ...prev,
       [e.target.id]: e.target.value,
     }));
+    setHasChanged(true);
 
     const { name, value } = e.target;
     let errors = state.errors;
@@ -224,10 +240,25 @@ function Form({ isLoading, getFromOffset, isMounted }) {
       default:
         break;
     }
+    if (validateForm(state.errors)) {
+      setDisabled(false);
+      console.log('valid');
+    } else {
+      console.log('invalid');
+      setDisabled(true);
+    }
+  };
+
+  const validateForm = (errors) => {
+    let valid = true;
+    Object.values(errors).forEach((val) => val.length > 0 && (valid = false)) &&
+      Object.values(state)
+        .slice(-1)
+        .forEach((val) => val.length > 0 && (valid = false));
+    return valid;
   };
 
   const toggleSwitch = (e) => {
-    console.log('toggle');
     setToggle((prev) => !prev);
     setState({
       name: '',
@@ -376,7 +407,7 @@ function Form({ isLoading, getFromOffset, isMounted }) {
             <Spinner />
           ) : (
             // </Spinner>
-            <input type="submit" value="Kup szkolenie" disabled={disabled} />
+            <input type="submit" value="Kupuję i płacę" disabled={disabled} />
           )}
         </div>
       </FormContainer>
