@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../../styles';
+import { breakpoints, colors } from '../../styles';
 import { Zoom } from 'react-reveal';
 
 const Box = styled.div``;
@@ -10,6 +10,10 @@ const IntroSpan = styled.span`
   font-weight: 700;
   color: ${colors().navy2};
   display: inline-block;
+
+  @media ${breakpoints().md} {
+    font-size: 40px;
+  }
 `;
 
 const SubSpan = styled.span`
@@ -19,6 +23,10 @@ const SubSpan = styled.span`
   font-size: 20px;
   color: ${colors().navy1};
   padding: 10px 0;
+
+  @media ${breakpoints().md} {
+    font-size: 28px;
+  }
 `;
 
 function AboutIntro() {

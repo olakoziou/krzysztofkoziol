@@ -58,18 +58,19 @@ function Training() {
     setFormOffset(offset);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    const stripeResp = await axios('/api/kup-szkolenie');
-    const id = await stripeResp.data.id;
-    const stripe = await stripePromise;
-    const { error } = await stripe.redirectToCheckout({
-      sessionId: id,
-    });
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsLoading(true);
+  //   const stripeResp = await axios('/api/kup-szkolenie');
+  //   console.log(stripeResp.data);
+  //   const id = await stripeResp.data.id;
+  //   const stripe = await stripePromise;
+  //   const { error } = await stripe.redirectToCheckout({
+  //     sessionId: id,
+  //   });
 
-    console.log(error);
-  };
+  //   console.log(`error: ${error}`);
+  // };
 
   return (
     <Box ref={ref}>
@@ -86,7 +87,11 @@ function Training() {
           </Zoom>
           {display ? <Gallery gallery={gallery} /> : null}
           <Zoom>
-            <Form isLoading={isLoading} getFromOffset={getFromOffset} />
+            <Form
+              isLoading={isLoading}
+              getFromOffset={getFromOffset}
+              // handleSubmit={handleSubmit}
+            />
           </Zoom>
         </MainBox>
       </Container>

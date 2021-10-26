@@ -33,7 +33,9 @@ const AboutContentBox = styled.div`
   position: relative;
 `;
 
-const Projects = styled.div``;
+const Projects = styled.div`
+  padding: 50px 0 20px;
+`;
 const ProjectsContentBox = styled.div`
   @media ${breakpoints().md} {
     display: flex;
@@ -52,10 +54,12 @@ const Par = styled.p`
   font-size: 20px;
   line-height: 1.6;
   color: ${colors().navy1};
-  padding: 20px;
+  padding: ${(props) => (props.projects ? '20px 10px' : '20px 10px')};
 
   @media ${breakpoints().md} {
-    font-size: 22px;
+    font-size: 24px;
+    line-height: 1.8;
+    padding: ${(props) => (props.projects ? '20px 40px' : '20px 0')};
   }
 `;
 
@@ -79,15 +83,19 @@ const Image = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   width: 200px;
-  height: 300px;
+  height: 250px;
   margin: 0 10px;
   box-shadow: 0 0 12px -8px ${colors().navy1};
   transition: all 0.2s;
 
-  @media ${breakpoints().md} {
+  @media (hover: hover) {
     &:hover {
       transform: scale(1.05);
     }
+  }
+
+  @media ${breakpoints().md} {
+    height: 300px;
   }
 `;
 

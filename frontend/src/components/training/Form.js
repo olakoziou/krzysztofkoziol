@@ -1,9 +1,12 @@
+import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Spinner from '../../Spinner';
 import { breakpoints, colors } from '../../styles';
 import Title from '../Title';
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC);
 
 const Box = styled.div`
   padding: 50px 0 30px;
@@ -198,7 +201,7 @@ function Form({ isLoading, getFromOffset, isMounted }) {
     },
   });
   const [toggle, setToggle] = useState(true);
-  const [disabled, setDisabled] = useState(true);
+  const [disabled, setDisabled] = useState(false);
   const [hasChanged, setHasChanged] = useState(false);
   const ref = useRef();
 
@@ -240,13 +243,13 @@ function Form({ isLoading, getFromOffset, isMounted }) {
       default:
         break;
     }
-    if (validateForm(state.errors)) {
-      setDisabled(false);
-      console.log('valid');
-    } else {
-      console.log('invalid');
-      setDisabled(true);
-    }
+    // if (validateForm(state.errors)) {
+    //   setDisabled(false);
+    //   console.log('valid');
+    // } else {
+    //   console.log('invalid');
+    //   setDisabled(true);
+    // }
   };
 
   const validateForm = (errors) => {
@@ -279,12 +282,48 @@ function Form({ isLoading, getFromOffset, isMounted }) {
       },
     });
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // setIsLoading(true);
+
+    const data = state;
+    delete data.errors;
+    // try {
+    //   await axios.post('/api/send-email', {
+    //     data,
+    //   });
+    //   const stripeResp = await axios('/api/kup-szkolenie');
+    //   const id = await stripeResp.data.id;
+    //   const stripe = await stripePromise;
+    //   const { errorStripe } = await stripe.redirectToCheckout({
+    //     sessionId: id,
+    //   });
+    // } catch (error) {
+    //   // console.log(`error stripe: ${errorStripe}`);
+    //   console.error(`error nodemailer: ${error}`);
+    // }
+
+    await axios.all([
+      axios.post('http://localhost:5001/api/send-email', {
+        data,
+      }),
+      axios.get('/api/kup-szkolenie').then(async (data) => {
+        const id = await data.data.id;
+        const stripe = await stripePromise;
+        const { errorStripe } = await stripe.redirectToCheckout({
+          sessionId: id,
+        });
+        console.log(errorStripe);
+      }),
+    ]);
+  };
   return (
     <Box ref={ref}>
       <Title text="Dane kontaktowe" />
       <FormContainer
-        // onSubmit={handleSubmit}
-        action="/api/kup-szkolenie"
+        onSubmit={handleSubmit}
+        // action="/api/kup-szkolenie"
         // method="POST"
       >
         <Switch toggle={toggle}>
@@ -342,7 +381,7 @@ function Form({ isLoading, getFromOffset, isMounted }) {
           <label htmlFor="email">Email</label>
           <i className="fa fa-check"></i>
         </Input>
-        <Input>
+        {/* <Input>
           <input
             type="text"
             name="address1"
@@ -391,7 +430,7 @@ function Form({ isLoading, getFromOffset, isMounted }) {
             <label htmlFor="nip">NIP</label>
             <i className="fa fa-check"></i>
           </Input>
-        ) : null}
+        ) : null} */}
         {/* <div>
           <input type="checkbox" name="check" />
           <label htmlFor="check">

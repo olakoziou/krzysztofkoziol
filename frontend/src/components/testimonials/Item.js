@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../../styles';
+import { breakpoints, colors } from '../../styles';
 
 const ItemBox = styled.div`
   min-height: 300px;
@@ -52,6 +52,10 @@ const ItemContent = styled.div`
       color: ${colors().navy1};
       font-weight: 700;
       cursor: pointer;
+
+      @media ${breakpoints().md} {
+        font-size: 22px;
+      }
     }
   }
   p {
@@ -59,6 +63,10 @@ const ItemContent = styled.div`
     text-align: center;
     padding: 0 8px 5px;
     font-size: 18px;
+
+    @media ${breakpoints().md} {
+      font-size: 20px;
+    }
   }
 `;
 

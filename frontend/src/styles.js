@@ -7,7 +7,7 @@ export const colors = (alpha = 1) => {
     navy3: `rgba(44, 83, 100, ${alpha})`,
     orange: `rgba(246, 147, 5, ${alpha})`,
     violet: `rgba(98, 85, 151, ${alpha})`,
-    grey: `rgba(237, 234, 218, ${alpha})`,
+    grey: `rgba(242, 240, 248, ${alpha})`,
     darkGrey: `rgba(15, 15, 15, ${alpha})`,
   };
 };

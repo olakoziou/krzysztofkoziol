@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
 import Container from '../Container';
-import Title from '../Title';
 import { Zoom } from 'react-reveal';
 
 const Box = styled.div`
@@ -29,11 +28,12 @@ const InvestorsBox = styled.div`
 
 const InvestorItem = styled.div`
   width: 85%;
+  max-width: 400px;
   margin: 25px auto;
   font-size: 20px;
   line-height: 1.3;
   color: ${colors().darkGrey};
-  background-color: ${colors(0.1).grey};
+  background-color: ${colors(0.15).grey};
   box-shadow: 0 0 12px -2px ${colors().navy2};
   position: relative;
 
@@ -43,6 +43,7 @@ const InvestorItem = styled.div`
 
   @media ${breakpoints().md} {
     width: 80%;
+    font-size: 22px;
   }
 
   &.topLeft {
@@ -106,6 +107,33 @@ const InvestorItem = styled.div`
     font-weight: 700;
     color: ${colors().navy1};
     padding: 5px 0;
+
+    @media ${breakpoints().md} {
+      font-size: 26px;
+    }
+  }
+`;
+
+const Title = styled.div`
+  font-size: 38px;
+  text-align: center;
+  color: ${colors().grey};
+  /* margin-top: 30px; */
+
+  @media ${breakpoints().md} {
+    font-size: 42px;
+  }
+
+  h4 {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    > span {
+      /* position: absolute; */
+      font-size: 60px;
+      font-weight: 700;
+      color: ${colors().orange};
+    }
   }
 `;
 
@@ -140,12 +168,11 @@ function Investors() {
     <Box>
       <Container>
         <Zoom>
-          <Title
-            size={38}
-            color={colors().grey}
-            text="Kto zarabia na nieruchomościach"
-            after={true}
-          />
+          <Title>
+            <h4>
+              Kto zarabia na nieruchomościach<span>?</span>
+            </h4>
+          </Title>
         </Zoom>
         <InvestorsBox>
           {state.map((el) => (

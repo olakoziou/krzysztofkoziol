@@ -14,6 +14,10 @@ const Box = styled.div`
   > div h3 {
     text-align: center;
     padding-top: 20px;
+
+    @media ${breakpoints().md} {
+      font-size: 52px;
+    }
   }
 `;
 
@@ -38,6 +42,7 @@ const Par = styled.p`
 
   @media ${breakpoints().md} {
     text-align: left;
+    font-size: 24px;
   }
 `;
 

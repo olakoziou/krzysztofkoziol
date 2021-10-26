@@ -5,24 +5,33 @@ import { breakpoints, colors } from '../../styles';
 const InfoBox = styled.div``;
 
 const ProjectNameBox = styled.div`
-  padding: 0 10px;
+  /* padding: 0 50px 0 0; */
 
   ul {
     padding: 10px 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     min-width: 150px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
 
     @media ${breakpoints().md} {
-      flex-direction: column;
+      /* flex-direction: column; */
+      flex-wrap: wrap;
+      overflow-x: unset;
     }
   }
 `;
 
 const ProjectName = styled.li`
   width: 100%;
-  max-width: 180px;
+  min-width: 150px;
+  max-width: 200px;
   padding: 15px;
   margin: 10px 10px 0;
   background-color: ${colors().violet};
@@ -41,7 +50,9 @@ const ProjectName = styled.li`
   }
 
   @media ${breakpoints().md} {
+    min-width: 180px;
     width: 100%;
+    font-size: 20px;
   }
 `;
 

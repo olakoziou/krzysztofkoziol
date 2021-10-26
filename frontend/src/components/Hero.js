@@ -18,7 +18,7 @@ const Box = styled.div`
 
   @media ${breakpoints().md} {
     min-height: 100%;
-    padding: 100px 0;
+    padding: 80px 0;
   }
 
   @media ${breakpoints().md} {
@@ -36,6 +36,10 @@ const Title = styled.h2`
 
   @media ${breakpoints().md} {
     font-size: 56px;
+  }
+
+  @media ${breakpoints().lg} {
+    font-size: 66px;
   }
 
   span {
