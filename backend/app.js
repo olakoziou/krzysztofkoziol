@@ -29,10 +29,6 @@ app.use('/api/trainings', trainingRouter);
 app.use('/api/gallery', galleryRouter);
 app.use('/api/videos', videoRouter);
 app.use('/api/kup-szkolenie', buyTrainingRouter);
-// app.use('/send-email', sendEmailRouter);
-
-// console.log(process.env);
-
 app.use('/api/send-email', sendEmailRouter);
 
 const port = process.env.PORT || 5000;

@@ -142,13 +142,13 @@ function Investors() {
     {
       id: 1,
       name: 'Pośrednik ds. nieruchomości',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel ligula mi. Pellentesque eu odio ac nunc mollis lobortis. Aenean nec urna ante. In molestie nunc ut dapibus mollis. Aliquam tristique ultrices elit aliquet posuere. Vestibulum aliquet tincidunt nulla at mollis.',
+      text: 'Jeżeli chcesz swoją przyszłość związać z rynkiem nieruchomości, praca jako pośrednik, może być dla Ciebie dobrym pomysłem na start. Nie dosyć, że dowiesz się jak wygląda proces szukania nieruchomości, negocjowania cen oraz finalizacja transakcji u notariusza, to przy okazji zarobisz. A im lepszym będziesz pośrednikiem, tym więcej zarobisz.',
       type: 'topLeft',
     },
     {
       id: 2,
       name: 'Inwestor',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel ligula mi. Pellentesque eu odio ac nunc mollis lobortis. Aenean nec urna ante. In molestie nunc ut dapibus mollis. Aliquam tristique ultrices elit aliquet posuere. Vestibulum aliquet tincidunt nulla at mollis.',
+      text: 'Wiele osób wciąż uważa, że żeby zacząć inwestować w nieruchomości, trzeba posiadać pokaźną sumę oszczędności. To mit. Sam prowadziłem kilka inwestycji, gdzie próg startowy zaczynał się już od 30 tysięcy. Teraz pytanie do Ciebie - ',
       type: 'topRight',
     },
     {

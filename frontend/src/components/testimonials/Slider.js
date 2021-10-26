@@ -4,7 +4,7 @@ import { breakpoints } from '../../styles';
 import Slider2 from 'infinite-react-carousel';
 import Item from './Item';
 import { v4 as uuidv4 } from 'uuid';
-import { SM, XSM, MD, LG } from '../../constans';
+import { SM, XSM, MD, LG, XL } from '../../constans';
 
 const SliderBox = styled.div`
   max-width: 100%;
@@ -47,13 +47,11 @@ function Slider({ data }) {
   }
 
   const checkWidth = () => {
-    if (state <= XSM) {
+    if (state <= SM) {
       return 1;
-    } else if (state >= XSM && state <= SM) {
-      return 1;
-    } else if (state >= SM && state <= MD) {
+    } else if (state >= SM && state <= LG) {
       return 2;
-    } else if (state >= MD && state <= LG) {
+    } else if (state >= LG && state <= XL) {
       return 3;
     } else {
       return 4;
