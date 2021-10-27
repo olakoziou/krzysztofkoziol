@@ -31,10 +31,10 @@ const InvestorItem = styled.div`
   max-width: 400px;
   margin: 25px auto;
   font-size: 20px;
-  line-height: 1.3;
-  color: ${colors().darkGrey};
-  background-color: ${colors(0.15).grey};
-  box-shadow: 0 0 12px -2px ${colors().navy2};
+  line-height: 1.5;
+  color: ${colors(0.9).grey};
+  background-color: ${colors(0.5).navy1};
+  box-shadow: 0 0 30px -18px ${colors().navy1};
   position: relative;
 
   @media ${breakpoints().sm} {
@@ -49,7 +49,7 @@ const InvestorItem = styled.div`
   &.topLeft {
     border-radius: 0 20px 20px 20px;
     left: -8px;
-    padding: 15px 15px 15px 30px;
+    padding: 25px 25px 25px 35px;
 
     &::before {
       top: -50px;
@@ -61,7 +61,7 @@ const InvestorItem = styled.div`
     border-radius: 20px 0 20px 20px;
     right: -8px;
     text-align: right;
-    padding: 15px 30px 15px 15px;
+    padding: 25px 35px 25px 25px;
 
     &::before {
       top: -50px;
@@ -72,7 +72,7 @@ const InvestorItem = styled.div`
   &.bottomLeft {
     border-radius: 20px 20px 20px 0;
     left: -8px;
-    padding: 15px 15px 15px 30px;
+    padding: 25px 25px 25px 35px;
 
     &::before {
       bottom: -50px;
@@ -84,7 +84,7 @@ const InvestorItem = styled.div`
     border-radius: 20px 20px 0 20px;
     right: -8px;
     text-align: right;
-    padding: 15px 30px 15px 15px;
+    padding: 25px 35px 25px 25px;
 
     &::before {
       bottom: -50px;
@@ -99,13 +99,13 @@ const InvestorItem = styled.div`
     font-family: 'Ubuntu', sans-serif;
     font-size: 112px;
     font-weight: 700;
-    color: ${colors(0.4).violet};
+    color: ${colors(0.7).violet};
   }
 
   h4 {
     font-size: 20px;
     font-weight: 700;
-    color: ${colors().navy1};
+    color: ${colors().grey};
     padding: 5px 0;
 
     @media ${breakpoints().md} {
@@ -118,7 +118,7 @@ const Title = styled.div`
   font-size: 38px;
   text-align: center;
   color: ${colors().grey};
-  /* margin-top: 30px; */
+  /* margin-top: 35px; */
 
   @media ${breakpoints().md} {
     font-size: 42px;

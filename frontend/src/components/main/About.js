@@ -34,10 +34,20 @@ const Button = styled.div`
   background-color: ${colors().grey};
   box-shadow: ${(props) =>
     !props.isOpened
-      ? `0 0 30px -1px ${colors().orange}`
-      : `0 0 30px -1px ${colors().violet}`};
+      ? `0 0 30px -3px ${colors().orange}`
+      : `0 0 30px -3px ${colors().violet}`};
   z-index: 10;
   transition: all 0.5s;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: ${(props) =>
+        !props.isOpened
+          ? `0 0 40px -1px ${colors().orange}`
+          : `0 0 40px -1px ${colors().violet}`};
+    }
+  }
 `;
 
 function About() {

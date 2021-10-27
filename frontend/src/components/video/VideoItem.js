@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
 
 const Box = styled.div`
-  height: ${(props) => (props.state ? '300px' : 'auto')};
+  height: ${(props) => (props.state ? '360px' : 'auto')};
   /* max-height: 120px; */
-  overflow-y: ${(props) => (props.state ? 'scroll' : 'hidden')};
+  /* overflow-y: ${(props) => (props.state ? 'scroll' : 'hidden')}; */
   overflow-x: hidden;
   border-bottom: 1px solid ${colors().darkGrey};
   transition: all 0.3s ease-out;
@@ -42,7 +42,7 @@ const Heading = styled.div`
   }
 `;
 const Main = styled.div`
-  padding: 10px 0 20px;
+  padding: 10px 20px;
   opacity: ${(props) => (props.state ? '1' : '0')};
   visibility: ${(props) => (props.state ? 'visible' : 'hidden')};
   transition: all 0.2s;
@@ -53,6 +53,7 @@ const Main = styled.div`
 
   @media ${breakpoints().md} {
     flex-direction: row;
+    padding: 10px 10px 20px 0;
   }
 
   p {

@@ -8,7 +8,7 @@ const ProjectNameBox = styled.div`
   /* padding: 0 50px 0 0; */
 
   ul {
-    padding: 10px 0;
+    padding: 10px 10px 20px;
     display: flex;
     justify-content: start;
     min-width: 150px;
@@ -37,13 +37,22 @@ const ProjectName = styled.li`
   background-color: ${colors().violet};
   border-radius: 10px;
   text-align: center;
-  color: ${colors().grey};
+  color: ${(props) =>
+    props.isActive ? `${colors().orange}` : `${colors().grey}`};
   font-weight: 700;
   box-shadow: ${(props) =>
     props.isActive
-      ? `0 0 14px -3px ${colors().navy1}`
+      ? `0 0 25px -3px ${colors().navy1}`
       : `0 0 12px -5px ${colors().navy1}`};
+  transform: ${(props) => (props.isActive ? 'scale(1.015)' : 'scale(1)')};
   transition: all 0.2s;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      color: ${colors().orange};
+    }
+  }
 
   @media ${breakpoints().sm} {
     width: 50%;

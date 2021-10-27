@@ -84,7 +84,7 @@ function Coworking() {
         <Zoom>
           <Title
             size={44}
-            color={colors().navy3}
+            color={colors(0.8).grey}
             text="WSPÓŁPRACA"
             weight={700}
           />

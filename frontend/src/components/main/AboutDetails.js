@@ -34,7 +34,7 @@ const AboutContentBox = styled.div`
 `;
 
 const Projects = styled.div`
-  padding: 50px 0 20px;
+  padding: 50px 10px 20px;
 `;
 const ProjectsContentBox = styled.div`
   @media ${breakpoints().md} {
