@@ -12,7 +12,7 @@ import Details from './Details';
 import Description from './Description';
 import Gallery from './Gallery';
 import Form from './Form';
-import Spinner from '../../Spinner';
+import Spinner from '../../components/Spinner';
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC);
 
 const Box = styled.div`

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
 import { Zoom } from 'react-reveal';
 import Title from '../Title';
-import Spinner from '../../Spinner';
+import Spinner from '../../components/Spinner';
 
 const Box = styled.div`
   width: 80%;

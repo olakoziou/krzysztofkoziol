@@ -36,6 +36,7 @@ exports.sendEmail = async (req, res) => {
             <li>Adres: ${req.body.data.address1}, ${req.body.data.address2}, ${
       req.body.data.address3
     },</li>
+            <li>NIP: ${req.body.data.nip}</li>
           </ul>
           <p>Dokonaj płatności poprzez bramkę stripe lub przelewem:</p>
           <ul>
@@ -51,7 +52,7 @@ exports.sendEmail = async (req, res) => {
           }</li>
           </ul>
           <p>Po zaksięgowaniu płatności, faktura zostanie wysłana na Twój adres mailowy.</p>
-          <p>Jeśli masz jakieś pytania, zadzwoń - <a href="tel:+48-730-173-031">730173031.</a> Pozdrawiam, Krzysiek Kozioł.</p>
+          <p>Jeśli masz jakieś pytania, zadzwoń - <a href="tel:+48-796-483-333">796-483-333.</a> Pozdrawiam, Krzysiek Kozioł.</p>
            </div>
       `,
   });

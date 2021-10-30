@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Spinner from '../../Spinner';
+import Spinner from '../Spinner';
 import { breakpoints, colors } from '../../styles';
 import Title from '../Title';
 import { loadStripe } from '@stripe/stripe-js';
@@ -29,7 +29,7 @@ const FormContainer = styled.form`
     max-width: 450px;
   }
 
-  div:last-of-type {
+  > div:last-of-type {
     width: 100%;
     max-width: 300px;
     margin: 30px auto 0;
@@ -185,11 +185,17 @@ const Privacy = styled.div`
   }
 `;
 
-const WaitForStripe = styled.div`
-  padding: 300px 0;
-  height: 800px;
+const SpinnerBtn = styled.div`
+  background-color: ${colors().violet};
+  color: ${colors().grey};
+  font-size: 26px;
+  font-weight: 700;
   text-align: center;
-  font-size: 28px;
+  text-transform: uppercase;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px -5px ${colors().navy1};
+  cursor: pointer;
 `;
 
 const validEmailRegex = RegExp(
@@ -342,155 +348,148 @@ function Form({ getFromOffset, isMounted }) {
     ]);
   };
 
-  if (!stripe) {
-    return (
-      <Box ref={ref}>
-        <Title text="Dane kontaktowe" />
-        <FormContainer
-          onSubmit={handleSubmit}
-          // action="/api/kup-szkolenie"
-          // method="POST"
-        >
-          <Switch toggle={toggle}>
-            {/* <span>Osoba prywatna</span> */}
-            <label>
-              <input
-                type="checkbox"
-                name="switch"
-                id="switch"
-                onChange={toggleSwitch}
-                checked={toggle}
-              />
-              <span></span>
-            </label>
-            <span>
-              Firma <i className="fa fa-check"></i>
-            </span>
-          </Switch>
-          {toggle ? (
-            <Input>
-              <input
-                type="text"
-                name="company"
-                id="company"
-                value={state.company}
-                onChange={handleChange}
-                required
-              />
-              <label htmlFor="company">Nazwa firmy</label>
-              <i className="fa fa-check"></i>
-            </Input>
-          ) : (
-            <Input>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                value={state.name}
-                onChange={handleChange}
-                required
-              />
-              <label htmlFor="name">Imię i nazwisko</label>
-              <i className="fa fa-check"></i>
-            </Input>
-          )}
-          <Input>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={state.email}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="email">Email</label>
-            <i className="fa fa-check"></i>
-          </Input>
-          <Input>
-            <input
-              type="text"
-              name="address1"
-              id="address1"
-              value={state.address1}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="address1">Ulica, nr budynku / nr lokalu</label>
-            <i className="fa fa-check"></i>
-          </Input>
-          <Input>
-            <input
-              type="text"
-              name="address2"
-              id="address2"
-              value={state.address2}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="address2">Kod poczowy</label>
-            <i className="fa fa-check"></i>
-          </Input>
-          <Input>
-            <input
-              type="text"
-              name="address3"
-              id="address3"
-              value={state.address3}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="address3">Miejscowość</label>
-            <i className="fa fa-check"></i>
-          </Input>
-          {toggle ? (
-            <Input>
-              <input
-                type="number"
-                name="nip"
-                id="nip"
-                value={state.nip}
-                onChange={handleChange}
-                required
-              />
-              <label htmlFor="nip">NIP</label>
-              <i className="fa fa-check"></i>
-            </Input>
-          ) : null}
-          <Privacy>
+  return (
+    <Box ref={ref}>
+      <Title text="Dane kontaktowe" />
+      <FormContainer
+        onSubmit={handleSubmit}
+        // action="/api/kup-szkolenie"
+        // method="POST"
+      >
+        <Switch toggle={toggle}>
+          {/* <span>Osoba prywatna</span> */}
+          <label>
             <input
               type="checkbox"
-              name="check"
-              checked={privacy}
-              onChange={acceptPrivacy}
+              name="switch"
+              id="switch"
+              onChange={toggleSwitch}
+              checked={toggle}
+            />
+            <span></span>
+          </label>
+          <span>
+            Firma <i className="fa fa-check"></i>
+          </span>
+        </Switch>
+        {toggle ? (
+          <Input>
+            <input
+              type="text"
+              name="company"
+              id="company"
+              value={state.company}
+              onChange={handleChange}
               required
             />
-            <label htmlFor="check">
-              {' '}
-              Kupując szkolenie wyrażam zgodę na przetwarzanie moich danych
-              osobowych.Zasady przetwarzania danych osobowych znajdziesz w{' '}
-              <Link to="/polityka-prywatnosci">polityce prywatności</Link>.
-            </label>
-          </Privacy>
-          <div>
-            {isLoading ? (
-              // <Spinner>
-              <Spinner />
-            ) : (
-              // </Spinner>
-              <input type="submit" value="Kupuję i płacę" disabled={disabled} />
-            )}
-          </div>
-        </FormContainer>
-      </Box>
-    );
-  } else {
-    return (
-      <WaitForStripe>
-        <p>Za chwilę nastąpi przekierowanie do bramki płatności</p>
-        <Spinner />
-      </WaitForStripe>
-    );
-  }
+            <label htmlFor="company">Nazwa firmy</label>
+            <i className="fa fa-check"></i>
+          </Input>
+        ) : (
+          <Input>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={state.name}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="name">Imię i nazwisko</label>
+            <i className="fa fa-check"></i>
+          </Input>
+        )}
+        <Input>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={state.email}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="email">Email</label>
+          <i className="fa fa-check"></i>
+        </Input>
+        <Input>
+          <input
+            type="text"
+            name="address1"
+            id="address1"
+            value={state.address1}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="address1">Ulica, nr budynku / nr lokalu</label>
+          <i className="fa fa-check"></i>
+        </Input>
+        <Input>
+          <input
+            type="text"
+            name="address2"
+            id="address2"
+            value={state.address2}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="address2">Kod poczowy</label>
+          <i className="fa fa-check"></i>
+        </Input>
+        <Input>
+          <input
+            type="text"
+            name="address3"
+            id="address3"
+            value={state.address3}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="address3">Miejscowość</label>
+          <i className="fa fa-check"></i>
+        </Input>
+        {toggle ? (
+          <Input>
+            <input
+              type="number"
+              name="nip"
+              id="nip"
+              value={state.nip}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="nip">NIP</label>
+            <i className="fa fa-check"></i>
+          </Input>
+        ) : null}
+        <Privacy>
+          <input
+            type="checkbox"
+            name="check"
+            checked={privacy}
+            onChange={acceptPrivacy}
+            required
+          />
+          <label htmlFor="check">
+            {' '}
+            Kupując szkolenie wyrażam zgodę na przetwarzanie moich danych
+            osobowych.Zasady przetwarzania danych osobowych znajdziesz w{' '}
+            <Link to="/polityka-prywatnosci">polityce prywatności</Link>.
+          </label>
+        </Privacy>
+        <div>
+          {isLoading ? (
+            // <Spinner>
+            <SpinnerBtn>
+              <Spinner bgc={colors().grey} />
+            </SpinnerBtn>
+          ) : (
+            // </Spinner>
+            <input type="submit" value="Kupuję i płacę" disabled={disabled} />
+          )}
+        </div>
+      </FormContainer>
+    </Box>
+  );
 }
 
 export default Form;
