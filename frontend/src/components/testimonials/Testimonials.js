@@ -6,7 +6,6 @@ import testimonialsMd from '../../assets/testimonials-md.jpg';
 import testimonialsLg from '../../assets/testimonials-lg.jpg';
 import testimonialsXl from '../../assets/testimonials-xl.jpg';
 import { colors } from '../../styles';
-import koziol1300x300 from '../../assets/koziol1300x300.png';
 import mm_small from '../../assets/mm_small.jpg';
 import jp_small from '../../assets/jp_small.jpg';
 import kz_small from '../../assets/kz_small.jpg';

@@ -2,7 +2,6 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const morgan = require('morgan');
-const nodemailer = require('nodemailer');
 
 const connectDB = require('./db');
 
@@ -23,6 +22,8 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 //ROUTES
 app.use('/api/trainings', trainingRouter);

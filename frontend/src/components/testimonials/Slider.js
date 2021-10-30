@@ -4,7 +4,7 @@ import { breakpoints } from '../../styles';
 import Slider2 from 'infinite-react-carousel';
 import Item from './Item';
 import { v4 as uuidv4 } from 'uuid';
-import { SM, XSM, MD, LG, XL } from '../../constans';
+import { SM, LG, XL } from '../../constans';
 
 const SliderBox = styled.div`
   max-width: 100%;

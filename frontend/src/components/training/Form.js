@@ -199,6 +199,7 @@ const SpinnerBtn = styled.div`
 `;
 
 const validEmailRegex = RegExp(
+  // eslint-disable-next-line
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 );
 
@@ -225,13 +226,12 @@ function Form({ getFromOffset, isMounted }) {
   const [privacy, setPrivacy] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [stripe, setStripe] = useState(false);
   // const [hasChanged, setHasChanged] = useState(false);
   const ref = useRef();
 
   useEffect(() => {
     getFromOffset(ref.current);
-  }, []);
+  }, [getFromOffset]);
   const handleChange = (e) => {
     setState((prev) => ({
       ...prev,
@@ -269,9 +269,7 @@ function Form({ getFromOffset, isMounted }) {
     }
     if (validateForm(state.errors)) {
       setDisabled(false);
-      console.log(privacy);
     } else {
-      console.log(privacy);
       setDisabled(true);
     }
   };
@@ -314,24 +312,8 @@ function Form({ getFromOffset, isMounted }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setStripe(true);
     const data = state;
     delete data.errors;
-
-    // try {
-    //   await axios.post('/api/send-email', {
-    //     data,
-    //   });
-    //   const stripeResp = await axios('/api/kup-szkolenie');
-    //   const id = await stripeResp.data.id;
-    //   const stripe = await stripePromise;
-    //   const { errorStripe } = await stripe.redirectToCheckout({
-    //     sessionId: id,
-    //   });
-    // } catch (error) {
-    //   // console.log(`error stripe: ${errorStripe}`);
-    //   console.error(`error nodemailer: ${error}`);
-    // }
 
     await axios.all([
       axios.post('http://localhost:5001/api/send-email', {

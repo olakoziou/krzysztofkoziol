@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Container from './Container';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { breakpoints, colors } from '../styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeNav } from '../redux/mobileNavSlice';

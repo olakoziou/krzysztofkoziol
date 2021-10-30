@@ -14,6 +14,8 @@ import Video from './components/video/Video';
 import Success from './components/checkout/Success';
 import Cancel from './components/checkout/Cancel';
 
+// if any trouble, remove Zoom
+
 function App() {
   return (
     <div className="App">
@@ -44,9 +46,9 @@ function App() {
             <Route path="/anulowano-zakup">
               <Cancel />
             </Route>
-            {/* <Route path="*">
+            <Route path="*">
               <NoMatch404 />
-            </Route> */}
+            </Route>
           </Switch>
 
           <Footer />

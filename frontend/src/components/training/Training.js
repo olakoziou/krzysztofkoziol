@@ -1,19 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Zoom } from 'react-reveal';
 import styled from 'styled-components';
-import { breakpoints, colors } from '../../styles';
+import { colors } from '../../styles';
 import Container from '../Container';
 import Testimonials from '../testimonials/Testimonials';
 import Title from '../Title';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { loadStripe } from '@stripe/stripe-js';
 import Details from './Details';
 import Description from './Description';
 import Gallery from './Gallery';
 import Form from './Form';
 import Spinner from '../../components/Spinner';
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC);
 
 const Box = styled.div`
   min-height: 300px;
