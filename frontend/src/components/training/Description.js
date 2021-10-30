@@ -77,13 +77,11 @@ const Button = styled.div`
 `;
 
 function Description({ training, formOffset }) {
-  console.log(formOffset);
   const handleClick = (e) => {
     // window.scrollTo({ top: formOffset, behavior: 'smooth' });
     formOffset.scrollIntoView({ behavior: 'smooth' });
   };
 
-  console.log(training.agenda[0].day1);
 
   return (
     <Box>

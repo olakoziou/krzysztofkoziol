@@ -51,23 +51,8 @@ function Training() {
   }, []);
 
   const getFromOffset = (offset) => {
-    console.log(offset);
     setFormOffset(offset);
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setIsLoading(true);
-  //   const stripeResp = await axios('/api/kup-szkolenie');
-  //   console.log(stripeResp.data);
-  //   const id = await stripeResp.data.id;
-  //   const stripe = await stripePromise;
-  //   const { error } = await stripe.redirectToCheckout({
-  //     sessionId: id,
-  //   });
-
-  //   console.log(`error: ${error}`);
-  // };
 
   return (
     <Box ref={ref}>

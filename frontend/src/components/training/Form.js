@@ -316,7 +316,7 @@ function Form({ getFromOffset, isMounted }) {
     delete data.errors;
 
     await axios.all([
-      axios.post('http://localhost:5001/api/send-email', {
+      axios.post('https://krzysztofkoziol.pl/api/send-email', {
         data,
       }),
       axios.get('/api/kup-szkolenie').then(async (data) => {
