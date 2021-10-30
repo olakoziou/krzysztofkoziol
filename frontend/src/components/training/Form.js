@@ -177,7 +177,13 @@ const Input = styled.div`
   }
 `;
 
-const Privacy = styled.div``;
+const Privacy = styled.div`
+  display: flex;
+  align-items: center;
+  > input {
+    margin-right: 5px;
+  }
+`;
 
 const WaitForStripe = styled.div`
   padding: 300px 0;

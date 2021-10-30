@@ -4,26 +4,12 @@ import { breakpoints, colors } from '../../styles';
 
 const Box = styled.div`
   height: ${(props) => (props.state ? '360px' : 'auto')};
-  /* max-height: 120px; */
-  /* overflow-y: ${(props) => (props.state ? 'scroll' : 'hidden')}; */
+  padding-bottom: ${(props) => (props.state ? '30px' : 'unset')};
   overflow-x: hidden;
   border-bottom: 1px solid ${colors().darkGrey};
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
   background-color: ${(props) =>
     props.state ? `${colors(0.025).navy1}` : `${colors(0.15).grey}`};
-
-  /* @media ${breakpoints().xsm} {
-    max-height: 105px;
-  }
-
-  @media ${breakpoints().sm} {
-    max-height: 90px;
-  } */
-
-  /* @media ${breakpoints().md} {
-    height: ${(props) => (props.state ? '400px' : '80px')};
-    max-height: 80px;
-  } */
 `;
 const Heading = styled.div`
   padding: 30px 20px;

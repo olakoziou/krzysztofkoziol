@@ -39,7 +39,7 @@ const Projects = styled.div`
 const ProjectsContentBox = styled.div`
   @media ${breakpoints().md} {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
   }
 `;
 
@@ -60,6 +60,13 @@ const Par = styled.p`
     font-size: 24px;
     line-height: 1.8;
     padding: ${(props) => (props.projects ? '20px 40px' : '20px 0')};
+  }
+
+  span {
+    a {
+      color: ${colors().orange};
+      font-weight: 700;
+    }
   }
 `;
 
@@ -118,7 +125,7 @@ function AboutDetails({ isOpened }) {
     {
       id: 3,
       name: 'urocze wzgórze',
-      text: 'Jest to moja pierwsza inwestycja deweloperska, którym głównym wykonawcą jest firma deweloperska Docotr QBud. ',
+      text: 'Jest to moja pierwsza inwestycja deweloperska, którym głównym wykonawcą jest firma deweloperska Docotr QBud. Cała budowa została podzielona na trzy etapy, a ja brałem udział w dwóch ostatnich. Inwestycja powstała w miejscowości Balice, tuż obok Krakowa. W jej skład wchodzi xxx domów w zabudowie bliźniaczej.',
     },
   ]);
   const [active, setActive] = useState(1);

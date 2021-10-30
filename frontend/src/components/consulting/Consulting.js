@@ -38,7 +38,12 @@ function Consulting() {
     <Box ref={ref}>
       <Container>
         <Zoom>
-          <Title text="Umów się na konsultację" size={38} after={true} />
+          <Title
+            text="Umów się na konsultację"
+            size={38}
+            after={true}
+            width="100%"
+          />
           <MainBox>
             <Calendar>
               <iframe
@@ -59,8 +64,8 @@ function Consulting() {
             <Form></Form>
           </MainBox>
         </Zoom>
-        <Testimonials />
       </Container>
+      <Testimonials />
     </Box>
   );
 }

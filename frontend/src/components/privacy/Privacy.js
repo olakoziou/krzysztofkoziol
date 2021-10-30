@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { colors } from '../../styles';
 import Container from '../Container';
@@ -13,8 +13,16 @@ const Box = styled.div`
 `;
 
 function Privacy() {
+  const ref = useRef();
+
+  useEffect(() => {
+    setTimeout(() => {
+      ref.current &&
+        window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth' });
+    }, 100);
+  }, []);
   return (
-    <Box>
+    <Box ref={ref}>
       <Container>
         <div>
           ADMINISTRATOR DANYCH OSOBOWYCH Administratorem danych osobowych w

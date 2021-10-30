@@ -36,7 +36,6 @@ function Training() {
   const ref = useRef();
 
   useEffect(() => {
-    console.dir(ref.current);
     async function fetchData() {
       const trainings = await axios('/api/trainings');
       const imgs = await axios('/api/gallery');

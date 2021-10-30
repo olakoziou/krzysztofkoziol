@@ -39,12 +39,15 @@ const ProjectName = styled.li`
   text-align: center;
   color: ${(props) =>
     props.isActive ? `${colors().orange}` : `${colors().grey}`};
+  /* color: ${colors().grey}; */
   font-weight: 700;
+  /* text-transform: ${(props) =>
+    props.isActive ? `uppercase` : `lowercase`}; */
   box-shadow: ${(props) =>
     props.isActive
-      ? `0 0 25px -3px ${colors().navy1}`
-      : `0 0 12px -5px ${colors().navy1}`};
-  transform: ${(props) => (props.isActive ? 'scale(1.015)' : 'scale(1)')};
+      ? `0 0 18px -3px ${colors().violet}`
+      : `0 0 12px -4px ${colors().violet}`};
+  transform: ${(props) => (props.isActive ? 'scale(1.018)' : 'scale(1)')};
   transition: all 0.2s;
   cursor: pointer;
 

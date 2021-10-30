@@ -19,9 +19,35 @@ const Par = styled.div`
   padding: 10px 0;
 `;
 
-const List = styled.ol`
-  li {
-    font-size: 20px;
+const Agenda = styled.div`
+  padding: 20px 0;
+`;
+
+const List = styled.div`
+  padding: 10px;
+  border: ${(props) =>
+    props.bgc ? `1px solid ${colors(0.05).navy3}` : 'unset'};
+  /* box-shadow: ${(props) =>
+    props.bgc ? `0 0 25px -20px ${colors().navy3}` : 'unset'}; */
+
+  background-color: ${(props) =>
+    props.bgc ? colors(0.025).navy1 : 'transparent'};
+
+  > span {
+    font-size: 22px;
+    font-weight: 700;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  ul {
+    li {
+      /* background-color: ${(props) =>
+        props.bgc ? props.bgc : 'transparent'}; */
+      font-size: 20px;
+      padding: 5px;
+      margin: 5px 0;
+      width: fit-content;
+    }
   }
 `;
 
@@ -56,18 +82,57 @@ function Description({ training, formOffset }) {
     // window.scrollTo({ top: formOffset, behavior: 'smooth' });
     formOffset.scrollIntoView({ behavior: 'smooth' });
   };
+
+  console.log(training.agenda[0].day1);
+
   return (
     <Box>
       <Title text="Opis i agenda" />
-      <Par>{training.description}</Par>
-      <List>
-        {training.agenda &&
-          training.agenda.map((el) => (
-            <li key={el.id}>
-              {el.hour}: {el.content}
-            </li>
-          ))}
+      <Par>{training.des1}</Par>
+      <List bgc={colors().violet}>
+        <ul>
+          {training.des2 && training.des2.map((el, i) => <li key={i}>{el}</li>)}
+        </ul>
       </List>
+      <Agenda>
+        <List>
+          <span>Dzień 1</span>
+          <ul>
+            {training.agenda[0].day1 &&
+              training.agenda[0].day1.map((el, i) => (
+                <li key={i}>
+                  {el.hour}: {el.content}
+                </li>
+              ))}
+          </ul>
+        </List>
+
+        <List>
+          <span>Dzień 2</span>
+          <ul>
+            {training.agenda[0].day2 &&
+              training.agenda[0].day2.map((el, i) => (
+                <li key={i}>
+                  {el.hour}: {el.content}
+                </li>
+              ))}
+          </ul>
+        </List>
+
+        {training.agenda[0].day3 ? (
+          <List>
+            <span>Dzień 3</span>
+            <ul>
+              {training.agenda[0].day3 &&
+                training.agenda[0].day3.map((el, i) => (
+                  <li key={i}>
+                    {el.hour}: {el.content}
+                  </li>
+                ))}
+            </ul>
+          </List>
+        ) : null}
+      </Agenda>
       <Button onClick={handleClick}>KUPUJĘ SZKOLENIE</Button>
     </Box>
   );

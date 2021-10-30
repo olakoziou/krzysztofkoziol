@@ -16,7 +16,7 @@ exports.sendEmail = async (req, res) => {
 
   await transport.sendMail({
     from: process.env.MAIL_FROM,
-    to: process.env.MAIL_OLA,
+    to: req.body.data.email,
     subject: 'Zarabianie na nieruchomościach. Szkolenie i warsztat praktyczny.',
     html: `<div className="email" style="
           padding: 10px 5px;

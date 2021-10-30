@@ -66,13 +66,10 @@ function Footer() {
       <Container>
         <FooterBox>
           <Title text="KONTAKT" color={colors().orange} size={44} />
-          <Par>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum,
-            quaerat?
-          </Par>
+          <Par>Masz jakieś pytania? Zadzwoń!</Par>
           <Phone>
             <i className="fas fa-phone-alt"></i>
-            <a href="tel:+48-730-173-031">730 173 031</a>
+            <a href="tel:+48-796-483-333">796 483 333</a>
           </Phone>
           <Privacy>
             <span>

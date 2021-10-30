@@ -5,7 +5,7 @@ import Container from '../Container';
 import { Zoom } from 'react-reveal';
 
 const Box = styled.div`
-  padding: 40px 0;
+  padding: 80px 0 40px;
 
   > div h3 {
     text-align: center;
@@ -148,19 +148,19 @@ function Investors() {
     {
       id: 2,
       name: 'Inwestor',
-      text: 'Wiele osób wciąż uważa, że żeby zacząć inwestować w nieruchomości, trzeba posiadać pokaźną sumę oszczędności. To mit. Sam prowadziłem kilka inwestycji, gdzie próg startowy zaczynał się już od 30 tysięcy. Teraz pytanie do Ciebie - ',
+      text: 'Wiele osób wciąż uważa, że żeby zacząć inwestować w nieruchomości, trzeba posiadać pokaźną sumę oszczędności. To mit. Sam prowadziłem kilka inwestycji, gdzie próg startowy zaczynał się już od 30 tysięcy. Pieniądze trzymane na koncie bankowym, stale tracą na wartości. Aby tego uniknąć, trzeba je mądrze zainwestować.',
       type: 'topRight',
     },
     {
       id: 3,
       name: 'Deweloper',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel ligula mi. Pellentesque eu odio ac nunc mollis lobortis. Aenean nec urna ante. In molestie nunc ut dapibus mollis. Aliquam tristique ultrices elit aliquet posuere. Vestibulum aliquet tincidunt nulla at mollis.',
+      text: 'Planowanie budowy, negocjowanie cen, organizowanie projektu i wykonawców, zarządzanie budową, sprzedaż... A to tylko część zadań dewelopera budowlanego. Z doświadczenia wiem, że łatwo nie jest, jednak dobrze zaplanowana inwestycja, może solidnie się opłacić. ',
       type: 'bottomLeft',
     },
     {
       id: 4,
-      name: 'Flipper',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel ligula mi. Pellentesque eu odio ac nunc mollis lobortis. Aenean nec urna ante. In molestie nunc ut dapibus mollis. Aliquam tristique ultrices elit aliquet posuere. Vestibulum aliquet tincidunt nulla at mollis.',
+      name: 'Fliper',
+      text: 'Dobry fliper musi umieć szybko ocenić stan techniczny oraz prawny nieruchomości, obliczyć koszt ewentualnego remontu i podjąć decyzje czy ta inwestycja przyniesie mu satysfakcjonujące zyski. Dlaczego? Bo prawdziwe okazje znikają naprawdę szybko. ',
       type: 'bottomRight',
     },
   ]);

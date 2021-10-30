@@ -51,24 +51,22 @@ function Coworking() {
     {
       id: 1,
       name: 'inwestycje',
-      text: 'inwestycje ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porttitor erat sit amet orci egestas convallis. Donec hendrerit, massa ut lacinia aliquet, purus lorem tempor magna, maximus varius leo quam a dolor. Suspendisse bibendum tortor in nisi imperdiet maximus.',
+      text: 'Od 2015 roku skutecznie pomnażam majątek moich inwestorów. Do tej pory przeprowadziłem kilkadziesiąt inwestycji - od flipowania piwnicami na krakowskim kazimierzu, poprzez zakup, remont i sprzedaż kamienicy, po budowę kompleksu wypoczynkowego na Warmii. ',
     },
     {
       id: 2,
       name: 'szkolenia',
-      text: 'szkolenia ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porttitor erat sit amet orci egestas convallis. Donec hendrerit, massa ut lacinia aliquet, purus lorem tempor magna, maximus varius leo quam a dolor. Suspendisse bibendum tortor in nisi imperdiet maximus.',
-      url: '/szkolenia',
+      text: 'Wiedzą dzielę się chętnie. Wytłumaczę Ci jak i dlaczego inwestować w nieruchomości, a następnie wspólnie poszukamy okazji i pojedziemy je obejrzeć. Po moim szkoleniu będziesz w stanie ocenić potencjalny zysk z danej inwestycji oraz samodzielnie ją przeprowadzić.',
     },
     {
       id: 3,
       name: 'konsultacje',
-      text: 'konsultacje ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porttitor erat sit amet orci egestas convallis. Donec hendrerit, massa ut lacinia aliquet, purus lorem tempor magna, maximus varius leo quam a dolor. Suspendisse bibendum tortor in nisi imperdiet maximus.',
-      url: '/konsultacje',
+      text: 'Jeżeli masz jakieś wątpliwości w związku z nieruchomościami, zapraszam do kontaktu. Pomogę Ci rozwiązać kwestie prawne oraz techniczne, doradzę podczas zakupu czy sprzedaży.',
     },
     {
       id: 4,
       name: 'zakup',
-      text: 'zakup ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porttitor erat sit amet orci egestas convallis. Donec hendrerit, massa ut lacinia aliquet, purus lorem tempor magna, maximus varius leo quam a dolor. Suspendisse bibendum tortor in nisi imperdiet maximus.',
+      text: 'Powiedz mi czego szukasz, a ja to znajdę. W Twoim imieniu poszukam odpowiedniej nieruchomości lub klienta, wynegocjuję atrakcyjną cenę, poprowadzą proces transakcji.',
     },
   ]);
   const [active, setActive] = useState(1);

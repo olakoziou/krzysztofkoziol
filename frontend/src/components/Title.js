@@ -8,9 +8,10 @@ const Text = styled.div`
   color: ${(props) => props.color};
   position: relative;
 
-  width: max-content;
+  width: ${(props) => (props.width ? 'fit-content' : 'max-content')};
   margin: 0 auto;
   padding: 0 15px;
+  text-align: center;
 
   @media ${breakpoints().sm} {
   }
@@ -35,9 +36,9 @@ const Text = styled.div`
   }
 `;
 
-function Title({ size = 28, weight = 500, text, color, after }) {
+function Title({ size = 28, weight = 500, text, color, after, width }) {
   return (
-    <Text after={after} size={size} weight={weight} color={color}>
+    <Text after={after} size={size} weight={weight} color={color} width={width}>
       <h3>{text}</h3>
     </Text>
   );

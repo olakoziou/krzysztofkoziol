@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Container from './Container';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { breakpoints, colors } from '../styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeNav } from '../redux/mobileNavSlice';
 
 const Head = styled.header`
-  height: 100px;
+  height: 120px;
   position: relative;
 
   > div {
@@ -69,6 +69,16 @@ const Menu = styled.div`
           height: 100%;
           color: ${colors(0.75).grey};
           padding: 5px 10px;
+
+          &.active {
+            color: ${colors().orange};
+          }
+
+          @media (hover: hover) {
+            &:hover {
+              color: ${colors().orange};
+            }
+          }
         }
         &:nth-of-type(4) {
           a {
@@ -128,6 +138,11 @@ const MobileMenu = styled.div`
           text-align: center;
           font-size: 38px;
           color: ${colors().orange};
+
+          &.active {
+            background-color: ${colors().orange};
+            color: ${colors().navy1};
+          }
         }
       }
     }
@@ -205,16 +220,16 @@ function Header() {
           <nav>
             <ul>
               <li>
-                <Link to="/wideo">wideo</Link>
+                <NavLink to="/wideo">wideo</NavLink>
               </li>
               <li>
-                <Link to="/konsultacje">konsultacje</Link>
+                <NavLink to="/konsultacje">konsultacje</NavLink>
               </li>
               <li>
-                <Link to="/szkolenia">szkolenia</Link>
+                <NavLink to="/szkolenia">szkolenia</NavLink>
               </li>
               <li>
-                <a href="tel:+48-730-173-031">kontakt</a>
+                <a href="tel:+48-796-483-333">kontakt</a>
               </li>
             </ul>
           </nav>
@@ -229,22 +244,22 @@ function Header() {
             <nav>
               <ul>
                 <li>
-                  <Link onClick={handleOpenMenu} to="/wideo">
+                  <NavLink onClick={handleOpenMenu} to="/wideo">
                     wideo
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link onClick={handleOpenMenu} to="/konsultacje">
+                  <NavLink onClick={handleOpenMenu} to="/konsultacje">
                     konsultacje
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link onClick={handleOpenMenu} to="/szkolenia">
+                  <NavLink onClick={handleOpenMenu} to="/szkolenia">
                     szkolenia
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <a onClick={handleOpenMenu} href="tel:+48-730-173-031">
+                  <a onClick={handleOpenMenu} href="tel:+48-796-483-333">
                     kontakt
                   </a>
                 </li>
