@@ -4,8 +4,7 @@
   "description": "personal website",
   "main": "app.js",
   "scripts": {
-    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" ",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" "
   },
   "author": "",
   "license": "ISC",
