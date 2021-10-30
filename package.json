@@ -4,11 +4,15 @@
   "description": "personal website",
   "main": "app.js",
   "scripts": {
+    "start": " cd backend && node app.js",
     "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\" ",
     "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "14.15.3"
+  },
   "devDependencies": {
     "concurrently": "^6.2.1"
   }
