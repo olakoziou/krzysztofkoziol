@@ -13,6 +13,9 @@ const ItemBox = styled.div`
   border-radius: 12px;
   transition: all 2s;
   box-shadow: 0 0 20px -5px ${colors().navy1};
+
+  display: flex;
+  justify-content: center;
 `;
 const ItemImg = styled.div`
   width: 130px;
@@ -23,9 +26,10 @@ const ItemImg = styled.div`
   border: 2px solid ${colors().orange};
   border-radius: 50%;
   position: absolute;
-  top: -45%;
-  left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translateY(-50%);
+  /* 
+  left: 50%; */
+  /* transform: translate(-50%, 50%); */
 `;
 const ItemContent = styled.div`
   padding: 75px 15px 15px;
@@ -77,7 +81,9 @@ function Item({ data }) {
       <ItemContent>
         <h5>{data.name}</h5>
         <span>
-          <a href={data.url}>{data.company}</a>
+          <a href={data.url} target="_blank" rel="noreferrer">
+            {data.company}
+          </a>
         </span>
         <p>{data.text}</p>
       </ItemContent>

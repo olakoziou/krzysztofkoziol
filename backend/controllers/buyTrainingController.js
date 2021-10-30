@@ -14,8 +14,8 @@ exports.buyTraining = async (req, res) => {
       },
     ],
     mode: 'payment',
-    success_url: 'http://localhost:3000/zakupiono-szkolenie',
-    cancel_url: 'http://localhost:3000/anulowano-zakup',
+    success_url: `${process.env.DOMAIN}/zakupiono-szkolenie`,
+    cancel_url: `${process.env.DOMAIN}/anulowano-zakup`,
   });
 
   //   res.redirect(303, session.url);

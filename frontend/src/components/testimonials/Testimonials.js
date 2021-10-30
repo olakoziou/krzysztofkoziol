@@ -6,7 +6,10 @@ import testimonialsMd from '../../assets/testimonials-md.jpg';
 import testimonialsLg from '../../assets/testimonials-lg.jpg';
 import testimonialsXl from '../../assets/testimonials-xl.jpg';
 import { colors } from '../../styles';
-import koziol1 from '../../assets/koziol1.png';
+import koziol1300x300 from '../../assets/koziol1300x300.png';
+import mm_small from '../../assets/mm_small.jpg';
+import jp_small from '../../assets/jp_small.jpg';
+import kz_small from '../../assets/kz_small.jpg';
 import Container from '../Container';
 import Slider from './Slider';
 import { SM, XSM, MD, LG } from '../../constans';
@@ -35,52 +38,52 @@ const TestimonialsBox = styled.div`
 const data = [
   {
     id: 1,
-    name: 'Grzegorz Borowski',
-    img: koziol1,
-    company: 'Wawel Apartments',
-    url: '#',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
+    name: 'Karol Żądło',
+    img: kz_small,
+    company: 'Inwestor, deweloper',
+    // url: 'https://www.booking.com/hotel/pl/wawel-apartments-old-town-krakow.pl.html',
+    text: 'Ekspert w branży nieruchomości, deweloper i zawodowy flipper. Dodatkowo jest bardzo miłą osobą. Gdy zaczynałem w  branży, chciałem zapytać Krzyśka o parę spraw z nią związanych. Nie dość, że Krzysiek normalnie mi odpisał, to jeszcze porozmawialiśmy przez telefon.',
   },
   {
     id: 2,
     name: 'Magdalena Makuch',
-    img: koziol1,
+    img: mm_small,
     company: 'Record Consultings',
-    url: '#',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
+    url: 'https://recordconsulting.pl/',
+    text: 'Krzyśka poznałam na niedługo przed tym, jak zakładał firmę SunStreet Investment. Widziałam jak się od tamtej pory rozwinął. Ma bardzo dużą wiedzę z zakresu inwestowania w nieruchomości i chętnie się nią dzieli. Jeśli chcesz się czegoś nauczyć, to tylko od niego.',
   },
   {
     id: 3,
-    name: 'Mariusz Mariusz',
-    img: koziol1,
-    company: 'Doctor QBud',
-    url: '#',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
+    name: 'Jarosław Pawlikowski',
+    img: jp_small,
+    company: 'Idea Box Pracownia Projektowa',
+    url: 'https://idea-box.eu/',
+    text: 'Najwyższa jakość świadczonych usług w zakresie inwestowania w nieruchomości. Pełen profesjonalizm, transparentność i łatwość w komunikacji są autem. Budowanie zdrowych relacji biznesowych to najlepszy opis działań Pana Krzysztofa. Polecam.',
   },
-  {
-    id: 4,
-    name: 'Dominika Dominika',
-    img: koziol1,
-    company: 'Inspektor budowy',
-    url: '#',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
-  },
-  {
-    id: 5,
-    name: 'Wojciech Matuszny',
-    img: koziol1,
-    company: 'Eco Masuria',
-    url: '#',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
-  },
-  {
-    id: 6,
-    name: 'Ten ZeSzkolenia',
-    img: koziol1,
-    company: 'Ubezpieczenia',
-    url: '#',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cupiditate perspiciatis animi? Quis accusamus sed aliquid quo corrupti, tempora necessitatibus?',
-  },
+  // {
+  //   id: 4,
+  //   name: 'Dominika Dominika',
+  //   img: koziol1300x300,
+  //   company: 'Inspektor budowy',
+  //   url: '#',
+  //   text: 'Krzysztof jest prawdziwym ekspertem w swym fachu. Jest świetnym negocjatorem i sprzedawcą, a do tego posiada bardzo dużą wiedzę techniczną oraz prawną. Potrafi znaleźć wyjście z naprawdę kiepskich sytuacji, a negocjacje prowadzi w taki sposób, aby obie strony były zadowolone.',
+  // },
+  // {
+  //   id: 5,
+  //   name: 'Wojciech Matuszny',
+  //   img: koziol1300x300,
+  //   company: 'Eco Masuria',
+  //   url: 'https://ecomasuria.pl/',
+  //   text: 'Krzyś jest niezastąpioną częścią naszego zespołu i nie jestem w stanie wyobrazić sobie budowy kompleksu Narusa - Leśna Przystań bez niego. Jest kompetentny, odpowiedzialny, pracowity i bardzo kreatywny. Świetnie radzi sobie w stresowych sytuacjach, potrafi znaleźć rozwiązanie każdego problemu. ',
+  // },
+  // {
+  //   id: 6,
+  //   name: 'Ten ZeSzkolenia',
+  //   img: koziol1300x300,
+  //   company: 'Ubezpieczenia',
+  //   url: '#',
+  //   text: 'Byłem uczestnikiem pierwszego szkolenia Krzyśka. ',
+  // },
 ];
 
 function Testimonials() {

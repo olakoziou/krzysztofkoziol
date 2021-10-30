@@ -75,7 +75,7 @@ function Slider({ data }) {
         slidesToShow={checkWidth()}
         autoplay={true}
         arrows={false}
-        autoplaySpeed={4000}
+        autoplaySpeed={8000}
         className="slider"
       >
         {data && data.map((el) => <Item key={uuidv4()} data={el} />)}
