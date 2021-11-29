@@ -9,23 +9,23 @@ const Box = styled.div`
   margin: 0 auto;
 
   @media ${breakpoints().xsm} {
-    width: 87%;
+    width: 90%;
   }
 
   @media ${breakpoints().sm} {
-    width: 84%;
+    width: 87%;
   }
 
   @media ${breakpoints().md} {
-    width: 80%;
+    width: 84%;
   }
 
   @media ${breakpoints().lg} {
-    width: 75%;
+    width: 78%;
   }
 
   @media ${breakpoints().xl} {
-    width: 70%;
+    width: 72%;
   }
 `;
 

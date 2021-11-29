@@ -314,9 +314,9 @@ function Form({ getFromOffset, isMounted }) {
     setIsLoading(true);
     const data = state;
     delete data.errors;
-
+    console.log(data);
     await axios.all([
-      axios.post('https://krzysztofkoziol.pl/api/send-email', {
+      axios.post(`${process.env.REACT_APP_DOMAIN}/api/send-email`, {
         data,
       }),
       axios.get('/api/kup-szkolenie').then(async (data) => {

@@ -23,6 +23,11 @@ function Background({ children }) {
         declineButtonText="Nie ok :( opuszczam stronę."
         flipButtons
         location="bottom"
+        visible="show"
+        onDecline={() => {
+          window.open('', '_parent', '');
+          window.close();
+        }}
         cookieName="myAwesomeCookieName2"
         // visible="show"
         style={{

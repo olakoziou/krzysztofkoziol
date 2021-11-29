@@ -28,9 +28,9 @@ function App() {
             <Route exact path="/">
               <Main />
             </Route>
-            <Route path="/wideo">
+            {/* <Route path="/wideo">
               <Video />
-            </Route>
+            </Route> */}
             <Route path="/konsultacje">
               <Consulting />
             </Route>

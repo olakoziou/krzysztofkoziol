@@ -9,6 +9,7 @@ import { colors } from '../../styles';
 import mm_small from '../../assets/mm_small.jpg';
 import jp_small from '../../assets/jp_small.jpg';
 import kz_small from '../../assets/kz_small.jpg';
+import wm_small from '../../assets/wm_small.jpg';
 import Container from '../Container';
 import Slider from './Slider';
 import { SM, XSM, MD, LG } from '../../constans';
@@ -57,32 +58,16 @@ const data = [
     img: jp_small,
     company: 'Idea Box Pracownia Projektowa',
     url: 'https://idea-box.eu/',
-    text: 'Najwyższa jakość świadczonych usług w zakresie inwestowania w nieruchomości. Pełen profesjonalizm, transparentność i łatwość w komunikacji są autem. Budowanie zdrowych relacji biznesowych to najlepszy opis działań Pana Krzysztofa. Polecam.',
+    text: 'Najwyższa jakość świadczonych usług w zakresie inwestowania w nieruchomości. Pełen profesjonalizm, transparentność i łatwość w komunikacji są atutem. Budowanie zdrowych relacji biznesowych to najlepszy opis działań Pana Krzysztofa. Polecam.',
   },
-  // {
-  //   id: 4,
-  //   name: 'Dominika Dominika',
-  //   img: koziol1300x300,
-  //   company: 'Inspektor budowy',
-  //   url: '#',
-  //   text: 'Krzysztof jest prawdziwym ekspertem w swym fachu. Jest świetnym negocjatorem i sprzedawcą, a do tego posiada bardzo dużą wiedzę techniczną oraz prawną. Potrafi znaleźć wyjście z naprawdę kiepskich sytuacji, a negocjacje prowadzi w taki sposób, aby obie strony były zadowolone.',
-  // },
-  // {
-  //   id: 5,
-  //   name: 'Wojciech Matuszny',
-  //   img: koziol1300x300,
-  //   company: 'Eco Masuria',
-  //   url: 'https://ecomasuria.pl/',
-  //   text: 'Krzyś jest niezastąpioną częścią naszego zespołu i nie jestem w stanie wyobrazić sobie budowy kompleksu Narusa - Leśna Przystań bez niego. Jest kompetentny, odpowiedzialny, pracowity i bardzo kreatywny. Świetnie radzi sobie w stresowych sytuacjach, potrafi znaleźć rozwiązanie każdego problemu. ',
-  // },
-  // {
-  //   id: 6,
-  //   name: 'Ten ZeSzkolenia',
-  //   img: koziol1300x300,
-  //   company: 'Ubezpieczenia',
-  //   url: '#',
-  //   text: 'Byłem uczestnikiem pierwszego szkolenia Krzyśka. ',
-  // },
+  {
+    id: 4,
+    name: 'Wojciech Matuszny',
+    img: wm_small,
+    company: 'Eco Masuria',
+    url: 'https://ecomasuria.pl/',
+    text: 'Krzysiek jest niezastąpioną częścią naszego zespołu i nie jestem w stanie wyobrazić sobie budowy kompleksu Narusa - Leśna Przystań bez niego. Jest kompetentny, odpowiedzialny, pracowity i bardzo kreatywny. Świetnie radzi sobie w stresowych sytuacjach, potrafi znaleźć rozwiązanie każdego problemu. ',
+  },
 ];
 
 function Testimonials() {

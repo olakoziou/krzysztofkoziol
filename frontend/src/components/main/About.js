@@ -39,6 +39,10 @@ const Button = styled.div`
   z-index: 10;
   transition: all 0.5s;
   cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  animation: bounce 2s ease infinite;
 
   @media (hover: hover) {
     &:hover {
@@ -46,6 +50,27 @@ const Button = styled.div`
         !props.isOpened
           ? `0 0 40px -1px ${colors().orange}`
           : `0 0 40px -1px ${colors().violet}`};
+    }
+  }
+
+  @keyframes bounce {
+    0% {
+      box-shadow: ${(props) =>
+        !props.isOpened
+          ? `0 0 30px -3px ${colors().orange}`
+          : `0 0 30px -3px ${colors().violet}`};
+    }
+    50% {
+      box-shadow: ${(props) =>
+        !props.isOpened
+          ? `0 0 15px -3px ${colors().orange}`
+          : `0 0 15px -3px ${colors().violet}`};
+    }
+    100% {
+      box-shadow: ${(props) =>
+        !props.isOpened
+          ? `0 0 30px -3px ${colors().orange}`
+          : `0 0 30px -3px ${colors().violet}`};
     }
   }
 `;

@@ -219,9 +219,9 @@ function Header() {
         <Menu>
           <nav>
             <ul>
-              <li>
+              {/* <li>
                 <NavLink to="/wideo">wideo</NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to="/konsultacje">konsultacje</NavLink>
               </li>
@@ -243,11 +243,11 @@ function Header() {
           <MobileMenu isOpened={isOpened}>
             <nav>
               <ul>
-                <li>
+                {/* <li>
                   <NavLink onClick={handleOpenMenu} to="/wideo">
                     wideo
                   </NavLink>
-                </li>
+                </li> */}
                 <li>
                   <NavLink onClick={handleOpenMenu} to="/konsultacje">
                     konsultacje
