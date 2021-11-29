@@ -13,6 +13,7 @@ const Box = styled.div`
 
 function Background({ children }) {
   const color = colors();
+  const x = window;
   return (
     <Box navy1={color.navy1} navy2={color.navy2} navy3={color.navy3}>
       {children}
@@ -25,7 +26,7 @@ function Background({ children }) {
         location="bottom"
         visible="show"
         onDecline={() => {
-          window.open('', '_parent', '');
+          window.open('about:blank', '_self');
           window.close();
         }}
         cookieName="myAwesomeCookieName2"
