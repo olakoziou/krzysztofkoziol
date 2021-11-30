@@ -13,7 +13,6 @@ const Box = styled.div`
 
 function Background({ children }) {
   const color = colors();
-  const x = window;
   return (
     <Box navy1={color.navy1} navy2={color.navy2} navy3={color.navy3}>
       {children}
@@ -24,13 +23,12 @@ function Background({ children }) {
         declineButtonText="Nie ok :( opuszczam stronę."
         flipButtons
         location="bottom"
-        visible="show"
+        // visible="show"
         onDecline={() => {
           window.open('about:blank', '_self');
           window.close();
         }}
         cookieName="myAwesomeCookieName2"
-        // visible="show"
         style={{
           background: '#2B373B',
           width: '100%',
@@ -43,7 +41,7 @@ function Background({ children }) {
         expires={150}
       >
         Cześć! Dla poprawnego działania, strona ta wykorzystuje pliki cookie.
-        Ok?{' '}
+        Ok? <br /> PS. scrollowanie oznacza zgodę ;)
       </CookieConsent>
     </Box>
   );

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { breakpoints, colors } from '../../styles';
 
 const ItemBox = styled.div`
-  min-height: 300px;
+  min-height: 350px;
   width: 90%;
   margin: 0 auto;
 

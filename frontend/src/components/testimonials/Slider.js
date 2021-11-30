@@ -10,16 +10,16 @@ const SliderBox = styled.div`
   max-width: 100%;
   height: min-content;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 20px 0 0;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 
   @media ${breakpoints().xsm} {
     max-width: 90%;
   }
 
   .slider {
-    padding: 100px 0 50px;
+    padding: 60px 0 15px;
     .carousel-initialized {
       overflow: unset;
       .carousel-track {
@@ -28,6 +28,7 @@ const SliderBox = styled.div`
       }
     }
     .carousel-dots {
+      margin-top: 5em;
       button {
         &::before {
           font-size: 24px;
