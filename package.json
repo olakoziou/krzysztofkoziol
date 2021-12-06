@@ -15,5 +15,8 @@
   },
   "devDependencies": {
     "concurrently": "^6.2.1"
+  },
+  "dependencies": {
+    "react-meta-tags": "^1.0.1"
   }
 }

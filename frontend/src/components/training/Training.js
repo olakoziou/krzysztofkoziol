@@ -11,6 +11,7 @@ import Description from './Description';
 import Gallery from './Gallery';
 import Form from './Form';
 import Spinner from '../../components/Spinner';
+import MetaTags from 'react-meta-tags';
 
 const Box = styled.div`
   min-height: 300px;
@@ -56,6 +57,15 @@ function Training() {
 
   return (
     <Box ref={ref}>
+      <MetaTags>
+        <title>
+          Zarabianie na nieruchomościach - szkolenie i warsztat praktyczny
+        </title>
+        <meta
+          name="description"
+          content="Moje szkolenie z inwestowania w nieruchomości to praktyczny warsztat z wyszukiwania okazji inwestycyjnych, negocjowania cen, kalkulacji."
+        />
+      </MetaTags>
       <Container>
         <Zoom>
           <Title text="Szkolenia" size={38} after={true} />{' '}

@@ -5,6 +5,7 @@ import { Zoom } from 'react-reveal';
 import Container from '../Container';
 import Title from '../Title';
 import Testimonials from '../testimonials/Testimonials';
+import MetaTags from 'react-meta-tags';
 
 const Box = styled.div`
   min-height: 300px;
@@ -36,6 +37,13 @@ function Consulting() {
   }, []);
   return (
     <Box ref={ref}>
+      <MetaTags>
+        <title>Krzysztof Kozioł - konsultacje nieruchomościowe</title>
+        <meta
+          name="description"
+          content="W ciągu 60 minut postaram się odpowiedzieć na wszytskie Twoje pytania dotyczące nieruchomości."
+        />
+      </MetaTags>
       <Container>
         <Zoom>
           <Title
