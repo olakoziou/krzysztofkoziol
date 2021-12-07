@@ -24,7 +24,14 @@ const Calendar = styled.div`
     }
   }
 `;
-const Form = styled.div``;
+const Subtitle = styled.p`
+  text-align: center;
+  padding: 30px 0 10px;
+
+  span {
+    font-weight: 700;
+  }
+`;
 
 function Consulting() {
   const ref = useRef();
@@ -52,6 +59,11 @@ function Consulting() {
             after={true}
             width="100%"
           />
+          <Subtitle>
+            {' '}
+            W polu <span> informacje dodatkowe </span>wpisz formę spotkania:
+            telefon, whatsapp, zoom.{' '}
+          </Subtitle>
           <MainBox>
             <Calendar>
               <iframe
@@ -69,7 +81,6 @@ function Consulting() {
                 }}
               ></iframe>
             </Calendar>
-            <Form></Form>
           </MainBox>
         </Zoom>
       </Container>
