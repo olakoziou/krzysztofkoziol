@@ -43,8 +43,7 @@ exports.sendEmail = async (req, res) => {
           <li>SunStreet Investment Sp. z.o.o</li>
           <li>Masarska 13/B4, 31-534 Kraków</li>
           <li>NIP: 678-316-33-06</li>
-          <li>15 1140 2004 0000 3902 7653 5691
-          Kraków</li>
+          <li>15 1140 2004 0000 3902 7653 5691</li>
           <li>W tytule: ${
             req.body.data.name
               ? `Opłata za szkolenie - ${req.body.data.name}`
@@ -79,7 +78,7 @@ exports.sendEmail = async (req, res) => {
             <li>Adres: ${req.body.data.address1}, ${req.body.data.address2}, ${
       req.body.data.address3
     },</li>
-            <p>Czekaj na płatność. Sprawdź swoje konto bankowe oraz <a href="https://www.stripe.com">stripe</a>.</p>
+            <p>Czekaj na płatność. Sprawdź swoje konto <a href="https://www.stripe.com">stripe</a>.</p>
           </ul>
            </div>
       `,
@@ -107,7 +106,35 @@ exports.sendEmail = async (req, res) => {
       <li>Adres: ${req.body.data.address1}, ${req.body.data.address2}, ${
       req.body.data.address3
     },</li>
-      <p>Czekaj na płatność. Sprawdź swoje konto bankowe oraz <a href="https://www.stripe.com">stripe</a>.</p>
+      <p>Czekaj na płatność. Sprawdź swoje konto <a href="https://www.stripe.com">stripe</a>.</p>
+    </ul>
+     </div>
+`,
+  });
+
+  await transport.sendMail({
+    from: process.env.MAIL_FROM,
+    to: process.env.MAIL_OLA,
+    subject: 'SZKOLENIE - pojawił się nowy klient.',
+    html: `<div className="email" style="
+    padding: 10px 5px;
+    font-family: sans-serif;
+    line-height: 2;
+    font-size: 20px; 
+    ">
+    <h2>Zarabianie na nieruchomościach. Szkolenie i warsztat praktyczny.</h2>
+    <p>Pojawił się nowy klient. Dane: </p>
+    <ul>
+      ${
+        req.body.data.name
+          ? `<li>Imię i nazwisko: ${req.body.data.name}</li>`
+          : `<li>Firma: ${req.body.data.company}</li>`
+      }
+      <li>Email: ${req.body.data.email}</li>
+      <li>Adres: ${req.body.data.address1}, ${req.body.data.address2}, ${
+      req.body.data.address3
+    },</li>
+      <p>Czekaj na płatność. Sprawdź swoje konto <a href="https://www.stripe.com">stripe</a>.</p>
     </ul>
      </div>
 `,
