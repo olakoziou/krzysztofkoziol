@@ -9,7 +9,7 @@ exports.buyTraining = async (req, res) => {
     payment_method_types: ['card', 'p24'],
     line_items: [
       {
-        price: 'price_1K45KcKqHIfHOAV6YYlcmm4K',
+        price: 'price_1K4RVzKqHIfHOAV62CxegpQH',
         quantity: 1,
       },
     ],
