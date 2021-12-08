@@ -1,8 +1,8 @@
-# dependencies
-/node_modules
+# # dependencies
+# /node_modules
 
-# production
-/build
+# # production
+# /build
 
-# misc
-.env
+# # misc
+# .env
