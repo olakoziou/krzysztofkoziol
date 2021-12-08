@@ -314,7 +314,6 @@ function Form({ getFromOffset, isMounted }) {
     setIsLoading(true);
     const data = state;
     delete data.errors;
-    console.log(data);
     await axios.all([
       axios.post(`${process.env.REACT_APP_DOMAIN}/api/send-email`, {
         data,
