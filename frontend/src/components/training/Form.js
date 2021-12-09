@@ -318,14 +318,14 @@ function Form({ getFromOffset, isMounted }) {
       axios.post(`${process.env.REACT_APP_DOMAIN}/api/send-email`, {
         data,
       }),
-      axios.get('/api/kup-szkolenie').then(async (data) => {
-        const id = await data.data.id;
-        const stripe = await stripePromise;
-        const { errorStripe } = await stripe.redirectToCheckout({
-          sessionId: id,
-        });
-        console.log(errorStripe);
-      }),
+      // axios.get('/api/kup-szkolenie').then(async (data) => {
+      //   const id = await data.data.id;
+      //   const stripe = await stripePromise;
+      //   const { errorStripe } = await stripe.redirectToCheckout({
+      //     sessionId: id,
+      //   });
+      //   console.log(errorStripe);
+      // }),
     ]);
   };
 

@@ -6,7 +6,8 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET);
 exports.buyTraining = async (req, res) => {
   res.statusCode = 200;
   const session = await stripe.checkout.sessions.create({
-    payment_method_types: ['card', 'p24'],
+    payment_method_types: ['card'],
+    // payment_method_types: ['card', 'p24'],
     line_items: [
       {
         price: 'price_1K4RVzKqHIfHOAV62CxegpQH',
