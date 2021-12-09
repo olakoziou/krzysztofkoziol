@@ -247,7 +247,7 @@ function Form({ getFromOffset, isMounted }) {
         errors.name = value.length < 5 ? 'Minimum 5 znaków' : '';
         break;
       case 'company':
-        errors.company = value.length < 5 ? 'Minimum 3 znaki' : '';
+        errors.company = value.length < 3 ? 'Minimum 3 znaki' : '';
         break;
       case 'email':
         errors.email = validEmailRegex.test(value) ? '' : 'Nieprawidłowy email';
@@ -318,14 +318,14 @@ function Form({ getFromOffset, isMounted }) {
       axios.post(`${process.env.REACT_APP_DOMAIN}/api/send-email`, {
         data,
       }),
-      // axios.get('/api/kup-szkolenie').then(async (data) => {
-      //   const id = await data.data.id;
-      //   const stripe = await stripePromise;
-      //   const { errorStripe } = await stripe.redirectToCheckout({
-      //     sessionId: id,
-      //   });
-      //   console.log(errorStripe);
-      // }),
+      axios.get('/api/kup-szkolenie').then(async (data) => {
+        const id = await data.data.id;
+        const stripe = await stripePromise;
+        const { errorStripe } = await stripe.redirectToCheckout({
+          sessionId: id,
+        });
+        console.log(errorStripe);
+      }),
     ]);
   };
 
