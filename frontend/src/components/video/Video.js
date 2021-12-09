@@ -31,8 +31,6 @@ function Video() {
   const [videos, setVideos] = useState([]);
   const ref = useRef();
 
-  console.log(videos);
-
   useEffect(() => {
     async function fetchData() {
       const response = await axios('/api/videos');
