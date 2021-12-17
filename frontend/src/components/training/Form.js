@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import Spinner from '../Spinner';
 import { breakpoints, colors } from '../../styles';
 import Title from '../Title';
-import { loadStripe } from '@stripe/stripe-js';
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC);
+// import { loadStripe } from '@stripe/stripe-js';
+// const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC);
 
 const Box = styled.div`
   padding: 50px 0 30px;
@@ -226,7 +226,7 @@ function Form({ getFromOffset, isMounted }) {
   const [privacy, setPrivacy] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  // const [hasChanged, setHasChanged] = useState(false);
+  const [hasChanged, setHasChanged] = useState(false);
   const ref = useRef();
 
   useEffect(() => {
@@ -318,15 +318,39 @@ function Form({ getFromOffset, isMounted }) {
       axios.post(`${process.env.REACT_APP_DOMAIN}/api/send-email`, {
         data,
       }),
-      axios.get('/api/kup-szkolenie').then(async (data) => {
-        const id = await data.data.id;
-        const stripe = await stripePromise;
-        const { errorStripe } = await stripe.redirectToCheckout({
-          sessionId: id,
-        });
-        console.log(errorStripe);
-      }),
+      // axios.get('/api/kup-szkolenie').then(async (data) => {
+      //   const id = await data.data.id;
+      //   const stripe = await stripePromise;
+      //   const { errorStripe } = await stripe.redirectToCheckout({
+      //     sessionId: id,
+      //   });
+      //   console.log(errorStripe);
+      // }),
     ]);
+  };
+
+  const timeout = () => {
+    setTimeout(() => {
+      setHasChanged(true);
+      setState({
+        name: '',
+        address1: '',
+        address2: '',
+        address3: '',
+        email: '',
+        nip: '',
+        company: '',
+        errors: {
+          name: '',
+          address1: '',
+          address2: '',
+          address3: '',
+          email: '',
+          nip: '',
+          company: '',
+        },
+      });
+    }, 3000);
   };
 
   return (
@@ -461,11 +485,16 @@ function Form({ getFromOffset, isMounted }) {
           {isLoading ? (
             // <Spinner>
             <SpinnerBtn>
-              <Spinner bgc={colors().grey} />
+              {hasChanged ? 'Wysłano' : <Spinner bgc={colors().grey} />}
             </SpinnerBtn>
           ) : (
             // </Spinner>
-            <input type="submit" value="Kupuję i płacę" disabled={disabled} />
+            <input
+              type="submit"
+              value="Kupuję i płacę"
+              disabled={disabled}
+              onClick={() => timeout()}
+            />
           )}
         </div>
       </FormContainer>

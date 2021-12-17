@@ -8,7 +8,7 @@ const connectDB = require('./db');
 const trainingRouter = require('./routes/trainingRoutes');
 const galleryRouter = require('./routes/galleryRoutes');
 const videoRouter = require('./routes/videoRoutes');
-const buyTrainingRouter = require('./routes/buyTrainingRoutes');
+// const buyTrainingRouter = require('./routes/buyTrainingRoutes');
 const sendEmailRouter = require('./routes/sendEmailRoutes');
 
 const app = express();
@@ -27,7 +27,7 @@ app.use(express.json());
 app.use('/api/trainings', trainingRouter);
 app.use('/api/gallery', galleryRouter);
 app.use('/api/videos', videoRouter);
-app.use('/api/kup-szkolenie', buyTrainingRouter);
+// app.use('/api/kup-szkolenie', buyTrainingRouter);
 app.use('/api/send-email', sendEmailRouter);
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
