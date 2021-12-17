@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://krzysztofkoziol.pl/',
+      target: 'https://krzysztofkoziol.pl',
       changeOrigin: true,
     })
   );
