@@ -267,12 +267,16 @@ function Form({ getFromOffset, isMounted }) {
       default:
         break;
     }
-    if (validateForm(state.errors)) {
+  };
+
+  useEffect(() => {
+    if (validateForm(state.errors) && !privacy) {
       setDisabled(false);
     } else {
       setDisabled(true);
     }
-  };
+    console.log('check');
+  }, [state, privacy]);
 
   const validateForm = (errors) => {
     let valid = true;
@@ -470,7 +474,7 @@ function Form({ getFromOffset, isMounted }) {
           <input
             type="checkbox"
             name="check"
-            checked={privacy}
+            checked={!privacy}
             onChange={acceptPrivacy}
             required
           />

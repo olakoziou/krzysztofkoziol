@@ -84,11 +84,12 @@ exports.sendEmail = async (req, res, next) => {
                     }</li>
               </ul>
               <p>Po zaksięgowaniu płatności, faktura zostanie wysłana na Twój adres mailowy.</p>
-              <p>Jeśli masz jakieś pytania, zadzwoń - <a href="tel:+48-796-483-333" style="
-              font-family: sans-serif;
-              color: #000;
-              text-decoration: none;
-              ">796-483-333.</a> Pozdrawiam, Krzysiek Kozioł.</p>
+              <p>Jeśli masz jakieś pytania, zadzwoń - <a href="tel:+48-796-483-333">796-483-333.</a> Pozdrawiam, Krzysiek Kozioł.</p>
+              <div>
+              <p><a href="https://krzysztofkoziol.pl/" target="_blank">www.krzysztofkoziol.pl</a></p>
+              <p><a href="https://sunstreetinvestment.pl/" target="_blank">www.sunstreetinvestment.pl</a></p>
+              <p><a href="https://narusa.pl/" target="_blank">www.narusa.pl</a></p>
+              </div>
                </div>
           `,
       },
