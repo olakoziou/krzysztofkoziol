@@ -5,7 +5,7 @@ import Title from '../Title';
 
 const Box = styled.div`
   padding: 40px 0;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 
   @media ${breakpoints().md} {
@@ -17,6 +17,11 @@ const Par = styled.div`
   font-size: 22px;
   line-height: 1.4;
   padding: 10px 0;
+
+  @media ${breakpoints().md} {
+    font-size: 24px;
+    line-height: 1.6;
+  }
 `;
 
 const Agenda = styled.div`
@@ -34,7 +39,7 @@ const List = styled.div`
     props.bgc ? colors(0.025).navy1 : 'transparent'};
 
   > span {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 700;
     display: inline-block;
     padding-bottom: 5px;
@@ -43,7 +48,7 @@ const List = styled.div`
     li {
       /* background-color: ${(props) =>
         props.bgc ? props.bgc : 'transparent'}; */
-      font-size: 20px;
+      font-size: 22px;
       padding: 5px;
       margin: 5px 0;
       width: fit-content;
@@ -81,7 +86,6 @@ function Description({ training, formOffset }) {
     // window.scrollTo({ top: formOffset, behavior: 'smooth' });
     formOffset.scrollIntoView({ behavior: 'smooth' });
   };
-
 
   return (
     <Box>

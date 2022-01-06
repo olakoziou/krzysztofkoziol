@@ -31,16 +31,16 @@ const CoworkingContentBox = styled.div`
 `;
 
 const Par = styled.p`
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.6;
   text-align: center;
   color: ${colors().grey};
   background-color: ${(props) => (props.bgc ? props.bgc : 'transparent')};
   border-radius: 12px;
   margin: 10px 0 0 0;
-  padding: 20px;
 
   @media ${breakpoints().md} {
+    padding: 5px 40px;
     text-align: left;
     font-size: 24px;
   }

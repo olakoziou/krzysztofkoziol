@@ -51,7 +51,7 @@ const Title = styled.h3`
 `;
 
 const Par = styled.p`
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.6;
   color: ${colors().navy1};
   padding: ${(props) => (props.projects ? '20px 10px' : '20px 10px')};

@@ -43,7 +43,7 @@ const InvestorItem = styled.div`
 
   @media ${breakpoints().md} {
     width: 80%;
-    font-size: 22px;
+    font-size: 24px;
   }
 
   &.topLeft {
@@ -103,7 +103,7 @@ const InvestorItem = styled.div`
   }
 
   h4 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     color: ${colors().grey};
     padding: 5px 0;

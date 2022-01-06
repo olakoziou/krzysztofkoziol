@@ -8,7 +8,7 @@ const ProjectNameBox = styled.div`
   /* padding: 0 50px 0 0; */
 
   ul {
-    padding: 10px 10px 20px;
+    padding: 10px 10px;
     display: flex;
     justify-content: start;
     min-width: 150px;
@@ -22,7 +22,7 @@ const ProjectNameBox = styled.div`
 
     @media ${breakpoints().md} {
       /* flex-direction: column; */
-      flex-wrap: wrap;
+      display: block;
       overflow-x: unset;
     }
   }

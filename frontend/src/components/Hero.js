@@ -19,9 +19,6 @@ const Box = styled.div`
   @media ${breakpoints().md} {
     min-height: 100%;
     padding: 80px 0;
-  }
-
-  @media ${breakpoints().md} {
     display: flex;
   }
 `;

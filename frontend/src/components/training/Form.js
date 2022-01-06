@@ -275,7 +275,6 @@ function Form({ getFromOffset, isMounted }) {
     } else {
       setDisabled(true);
     }
-    console.log('check');
   }, [state, privacy]);
 
   const validateForm = (errors) => {
